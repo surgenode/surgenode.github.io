@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-18821.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>java js 二级联动下拉列表_JS实现下拉列表的二级联动</title>
+        <meta name="description" content="这个是简单也是最基本的下拉框联动的示例，这个示例主要针对那些只有二级联动，且第一级是固定的选项，第二级的内容也比较简单，不刷新的联动，动态的联动需要检索数据库，这个对不需要更新的二级联动比较实用。这里" />
+        <link rel="icon" href="__ADDON__/img/surgenode/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                                <a href="/" class="navbar-brand">
+                    Surge Node
+                </a>
+                            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">java js 二级联动下拉列表_JS实现下拉列表的二级联动</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                      				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>这个是简单也是最基本的下拉框联动的示例，这个示例主要针对那些只有二级联动，且第一级是固定的选项，第二级的内容也比较简单，不刷新的联动，动态的联动需要检索数据库，这个对不需要更新的二级联动比较实用。这里使用了javascript来联动第二级下拉框。</p> <p>String path = request.getContextPath();</p> <p>String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";</p> <p>%&gt;</p> <p> New Document</p> <p>//定义了城市的二维数组，里面的顺序跟省份的顺序是相同的。通过selectedIndex获得省份的下标值来得到相应的城市数组</p> <p>var city=[</p> <p>["北京","天津","上海","重庆"],</p> <p>["南京","苏州","南通","常州"],</p> <p>["福州","福安","龙岩","南平"],</p> <p>["广州","潮阳","潮州","澄海"],</p> <p>["兰州","白银","定西","敦煌"]</p> <p>];</p> <p>function getCity(){<!-- --></p> <p>//获得省份下拉框的对象</p> <p>var sltProvince=document.form1.province;</p> <p>//获得城市下拉框的对象</p> <p>var sltCity=document.form1.city;</p> <p>//得到对应省份的城市数组</p> <p>var provinceCity=city[sltProvince.selectedIndex - 1];</p> <p>//清空城市下拉框，仅留提示选项</p> <p>sltCity.length=1;</p> <p>//将城市数组中的值填充到城市下拉框中</p> <p>for(var i=0;i</p> <p>sltCity[i+1]=new Option(provinceCity[i],provinceCity[i]);</p> <p>}</p> <p>}</p> <p>请选择所在省份</p> <p>直辖市</p> <p>江苏省</p> <p>福建省</p> <p>广东省</p> <p>甘肃省</p> <p>请选择所在城市</p> <p>这段代码比较简单。</p> <p>如果对js不大熟悉，可以看看下面关于js处理select对象的内容：</p> <p>1、使用selectedIndex属性获取当前选项的索引</p> <p>下拉框的选项是一个线性数组，每个选项都有一个索引，selectedIndex表示当前被选中的选项的索引号。结合options属性，可以得到被选中的option对象，从而对其做进一步的处理。当下拉框可多选时，selectedIndex属性返回第一个被选中的索引。</p> <p>selectedIndex是个只读的属性，想把通过索引指定的下拉框的项设置为选中状态，可以设置option对象的selected=true来实现。</p> <p>2、为select对象添加一个选项</p> <p>sltCity[i+1]=new&nbsp;Option(provinceCity[i],provinceCity[i]);</p> <p>new&nbsp;Option(provinceCity[i],provinceCity[i])表示创建一个值为provinceCity[i]，文本为provinceCity[i]的option对象，sltCity是页面上的city对象，i+1指定新添选项的位置。</p> <p>3、清空一个select对象</p> <p>要将下拉框的所有选项删除有两种方法，</p> <p>第一种方法就是遍历删除：</p> <p>1&nbsp;var l=myselect.length;</p> <p>2&nbsp;for(var i=0;i</p> <p>3&nbsp;myselect.options[i]=null;</p> <p>4&nbsp;}</p> <p>第二种方法比较简单，因此一般都使用此方法：</p> <p>myselect.length=0;</p> </div> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>下一个：<a href="/news/article-18822.htm">著名宠物品牌排行榜前十名（著名的宠物品牌排行榜）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-7-free-node-subscribe.htm" title="「10月7日」最高速度20.7M/S，2024年Surge每天更新免费节点订阅链接">「10月7日」最高速度20.7M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-9-node-share.htm" title="「10月9日」最高速度21.4M/S，2024年Surge每天更新免费节点订阅链接">「10月9日」最高速度21.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-8-free-subscribe-node.htm" title="「9月8日」最高速度18.3M/S，2024年Surge每天更新免费节点订阅链接">「9月8日」最高速度18.3M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-16-node-share-links.htm" title="「8月16日」最高速度20.4M/S，2024年Surge每天更新免费节点订阅链接">「8月16日」最高速度20.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-11-node-share-links.htm" title="「10月11日」最高速度18.4M/S，2024年Surge每天更新免费节点订阅链接">「10月11日」最高速度18.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-28-free-node-subscribe-links.htm" title="「9月28日」最高速度20.5M/S，2024年Surge每天更新免费节点订阅链接">「9月28日」最高速度20.5M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-free-subscribe-node.htm" title="「10月30日」最高速度19M/S，2024年Surge每天更新免费节点订阅链接">「10月30日」最高速度19M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-30-free-node-subscribe-links.htm" title="「8月30日」最高速度19.3M/S，2024年Surge每天更新免费节点订阅链接">「8月30日」最高速度19.3M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-24-free-node-subscribe-links.htm" title="「10月24日」最高速度22.4M/S，2024年Surge每天更新免费节点订阅链接">「10月24日」最高速度22.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-26-free-high-speed-nodes.htm" title="「7月26日」最高速度19.4M/S，2024年Surge每天更新免费节点订阅链接">「7月26日」最高速度19.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
