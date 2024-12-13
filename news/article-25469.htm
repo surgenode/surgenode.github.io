@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-25469.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SpringBoot整合 &#8211; 依赖以及配置文件</title>
+        <meta name="description" content="文章目录      1. 内置Tomcat服务器换为Jetty服务器 2. 视图引擎（thymeleaf、jsp)   2.1 thymeleaf - 建议使用 2.2 jsp - 不建议使用   3" />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                                <a href="/" class="navbar-brand">
+                    Surge Node
+                </a>
+                            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">SpringBoot整合 &#8211; 依赖以及配置文件</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>文章目录</h3> <ul> <li> <ul> <li> <ul> <li><a href="#1_TomcatJetty_1" rel="nofollow">1. 内置Tomcat服务器换为Jetty服务器</a></li> <li><a href="#2_thymeleafjsp_25" rel="nofollow">2. 视图引擎（thymeleaf、jsp)</a></li> <li> <ul> <li><a href="#21_thymeleaf___32" rel="nofollow">2.1 thymeleaf - 建议使用</a></li> <li><a href="#22_jsp___63" rel="nofollow">2.2 jsp - 不建议使用</a></li> </ul> </li> <li><a href="#3__111" rel="nofollow">3. 静态资源处理</a></li> <li><a href="#4___applicationyml_141" rel="nofollow">4. 完整版 - application.yml</a></li> </ul> </li> </ul> </li> </ul> </div> <h3><a id="1_TomcatJetty_1" rel="nofollow"></a>1. 内置Tomcat服务器换为Jetty服务器</h3> <pre><code class="prism language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusions</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusion</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-tomcat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusion</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusions</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-jetty<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span></code></pre> <h3><a id="2_thymeleafjsp_25" rel="nofollow"></a>2. 视图引擎（thymeleaf、jsp)</h3> <p><strong>源码分析</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/b0ba6fa06171bfc4d8cacca0feff3f1e.jpg" alt="SpringBoot整合 - 依赖以及配置文件"></p> <h4><a id="21_thymeleaf___32" rel="nofollow"></a>2.1 thymeleaf - 建议使用</h4> <p><strong>使用thymeleaf模板引擎需要添加的依赖</strong></p> <pre><code class="prism language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-thymeleaf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span></code></pre> <p><strong>application.yml全局配置文件关于thymeleaf的配置</strong></p> <pre><code class="prism language-yml"><span class="token key atrule">thymeleaf</span><span class="token punctuation">:</span><span class="token key atrule">cache</span><span class="token punctuation">:</span><span class="token boolean important">false</span><span class="token key atrule">suffix</span><span class="token punctuation">:</span> .html<span class="token key atrule">prefix</span><span class="token punctuation">:</span> classpath<span class="token punctuation">:</span>/templates/<span class="token key atrule">mode</span><span class="token punctuation">:</span> HTML5<span class="token key atrule">encoding</span><span class="token punctuation">:</span> utf<span class="token punctuation">-</span><span class="token number">8</span><span class="token key atrule">servlet</span><span class="token punctuation">:</span><span class="token key atrule">content-type</span><span class="token punctuation">:</span> text/html</code></pre> <h4><a id="22_jsp___63" rel="nofollow"></a>2.2 jsp - 不建议使用</h4> <p><strong>使用jsp模板引擎需要添加的依赖</strong></p> <pre><code class="prism language-xml"><span class="token comment">&lt;!--添加tomcat依赖模块.-少了很多东西--&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-tomcat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>provided<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!--jsp本质就是个servlet - 内置tomcat没有该接口--&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>javax.servlet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>javax.servlet-api<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>provided<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- 添加jstl标签库依赖模块 --&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>javax.servlet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jstl<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- 使用jsp引擎，springboot内置tomcat没有此依赖 - 解析jsp文件 --&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.apache.tomcat.embed<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>tomcat-embed-jasper<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>provided<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span></code></pre> <p><strong>application.yml全局配置文件关于jsp的配置</strong></p> <pre><code class="prism language-yml"><span class="token key atrule">spring</span><span class="token punctuation">:</span><span class="token key atrule">mvc</span><span class="token punctuation">:</span><span class="token key atrule">view</span><span class="token punctuation">:</span><span class="token key atrule">prefix</span><span class="token punctuation">:</span> /WEB<span class="token punctuation">-</span>INF/jsp/<span class="token key atrule">suffix</span><span class="token punctuation">:</span> .jsp</code></pre> <h3><a id="3__111" rel="nofollow"></a>3. 静态资源处理</h3> <p><strong>WebMvcAutoConfiguration - 源码分析、调式</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221130/30ce6adbcdeb15e130a39d153ee14891.jpg" alt="SpringBoot整合 - 依赖以及配置文件"></p> <p><strong>application.yml全局配置文件设置静态资源的访问路径</strong></p> <pre><code class="prism language-yml"><span class="token key atrule">mvc</span><span class="token punctuation">:</span><span class="token key atrule">static-path-pattern</span><span class="token punctuation">:</span> /resources/**<span class="token key atrule">resources</span><span class="token punctuation">:</span><span class="token key atrule">static-locations</span><span class="token punctuation">:</span> classpath<span class="token punctuation">:</span>/resources/</code></pre> <p></p> <p><strong>SpringMVC.xml的配置 - 等价与上面的配置</strong></p> <pre><code class="prism language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Resources</span><span class="token attr-name">mapping</span><span class="token attr-value"><span class="token punctuation">=</span>”/static/**”</span><span class="token attr-name">location</span><span class="token attr-value"><span class="token punctuation">=</span>”/static/”</span><span class="token punctuation">/&gt;</span></span><span class="token comment">&lt;!-- Mapping 等价于  staticPathPattern --&gt;</span><span class="token comment">&lt;!-- Location 等价于 staticLocations --&gt;</span></code></pre> <h3><a id="4___applicationyml_141" rel="nofollow"></a>4. 完整版 - application.yml</h3> <p><strong>application.yml</strong></p> <pre><code class="prism language-yml"><span class="token key atrule">spring</span><span class="token punctuation">:</span><span class="token comment"># 数据源的配置</span><span class="token key atrule">datasource</span><span class="token punctuation">:</span><span class="token key atrule">username</span><span class="token punctuation">:</span> root<span class="token key atrule">password</span><span class="token punctuation">:</span><span class="token number">123456</span><span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/test<span class="token punctuation">?</span>serverTimezone=UTC<span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.cj.jdbc.Driver<span class="token comment"># 模板引擎的相关配置</span><span class="token key atrule">thymeleaf</span><span class="token punctuation">:</span><span class="token key atrule">cache</span><span class="token punctuation">:</span><span class="token boolean important">false</span><span class="token key atrule">suffix</span><span class="token punctuation">:</span> .html<span class="token key atrule">prefix</span><span class="token punctuation">:</span> classpath<span class="token punctuation">:</span>/templates/<span class="token key atrule">mode</span><span class="token punctuation">:</span> HTML<span class="token key atrule">encoding</span><span class="token punctuation">:</span> utf<span class="token punctuation">-</span><span class="token number">8</span><span class="token key atrule">servlet</span><span class="token punctuation">:</span><span class="token key atrule">content-type</span><span class="token punctuation">:</span> text/html<span class="token comment"># 静态资源的路径</span><span class="token key atrule">mvc</span><span class="token punctuation">:</span><span class="token key atrule">static-path-pattern</span><span class="token punctuation">:</span> /resources/**<span class="token key atrule">resources</span><span class="token punctuation">:</span><span class="token key atrule">static-locations</span><span class="token punctuation">:</span> classpath<span class="token punctuation">:</span>/resources/<span class="token comment"># 文件的上传与下载配置</span><span class="token key atrule">servlet</span><span class="token punctuation">:</span><span class="token key atrule">multipart</span><span class="token punctuation">:</span><span class="token key atrule">max-file-size</span><span class="token punctuation">:</span> 50MB<span class="token key atrule">max-request-size</span><span class="token punctuation">:</span> 50MB<span class="token comment"># Tomcat服务器相关配置</span><span class="token key atrule">server</span><span class="token punctuation">:</span><span class="token key atrule">port</span><span class="token punctuation">:</span><span class="token number">8080</span><span class="token key atrule">servlet</span><span class="token punctuation">:</span><span class="token key atrule">context-path</span><span class="token punctuation">:</span> /springboot<span class="token comment"># mybatis的相关配置</span><span class="token key atrule">mybatis</span><span class="token punctuation">:</span><span class="token key atrule">configuration</span><span class="token punctuation">:</span><span class="token key atrule">cache-enabled</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token key atrule">type-aliases-package</span><span class="token punctuation">:</span> top.linruchang.springbootdemo.domain<span class="token key atrule">mapper-locations</span><span class="token punctuation">:</span> classpath<span class="token punctuation">:</span>/mapper/<span class="token important">*Mapper</span>.xml<span class="token key atrule">lazy-initialization</span><span class="token punctuation">:</span><span class="token boolean important">true</span></code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-25000.htm">redis持久化概述</a></p>
+                                        <p>下一个：<a href="/news/article-25470.htm">避坑！js正确地使用fill()初始化二维数组_在线工具</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-9-18-node-share.htm" title="「9月18日」最高速度20.1M/S，2024年Surge每天更新免费节点订阅链接">「9月18日」最高速度20.1M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-18-node-share.htm" title="「8月18日」最高速度18.9M/S，2024年Surge每天更新免费节点订阅链接">「8月18日」最高速度18.9M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-free-node-subscribe.htm" title="「10月15日」最高速度21.4M/S，2024年Surge每天更新免费节点订阅链接">「10月15日」最高速度21.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-29-free-node-subscribe-links.htm" title="「9月29日」最高速度19.3M/S，2024年Surge每天更新免费节点订阅链接">「9月29日」最高速度19.3M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20408.htm" title="家养泰迪出售（自家泰迪出售）">家养泰迪出售（自家泰迪出售）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-26-free-high-speed-nodes.htm" title="「10月26日」最高速度22.5M/S，2024年Surge每天更新免费节点订阅链接">「10月26日」最高速度22.5M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-10-free-high-speed-nodes.htm" title="「12月10日」最高速度19.2M/S，2024年Surge每天更新免费节点订阅链接">「12月10日」最高速度19.2M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-14-node-share-links.htm" title="「8月14日」最高速度21.3M/S，2024年Surge每天更新免费节点订阅链接">「8月14日」最高速度21.3M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-27-node-share.htm" title="「10月27日」最高速度19.6M/S，2024年Surge每天更新免费节点订阅链接">「10月27日」最高速度19.6M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-node-share-links.htm" title="「11月17日」最高速度20.9M/S，2024年Surge每天更新免费节点订阅链接">「11月17日」最高速度20.9M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

@@ -2,14 +2,13 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://surgenode.github.io" />
+        <link rel="canonical" href="https://surgenode.github.io/news/article-25470.htm" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>2024-08归档 - Surge Node节点订阅站</title>
-        <meta name="keywords" content="2024-08归档" />
-        <meta name="description" content="2024-08归档" />
+    <title>避坑！js正确地使用fill()初始化二维数组_在线工具</title>
+        <meta name="description" content="fill()方法都知道，填充数组 比如：   let a = new Array(5).fill(0); console.log(a); // 输出结果为[0, 0, 0, 0, 0]  当我们想使用" />
         <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
     <!-- Bootstrap -->
     <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
@@ -35,7 +34,7 @@
      crossorigin="anonymous"></script>
 </head>
 
-<body data-page="category">
+<body data-page="detail">
     <!-- header-section start -->
 <div class="header navbar-fixed-top">
     <div class="container">
@@ -70,14 +69,15 @@
                 <div class="page-section">
                     <div class="col-md-6">
                         <div class="page-description">
-                            <h1 class="page-title">2024-08 归档</h1>
+                            <h1 class="page-title">避坑！js正确地使用fill()初始化二维数组_在线工具</h1>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="page-breadcrumb">
                             <ol class="breadcrumb">
                                 <li><a href="/">首页</a></li>
-                                <li>2024-08 归档</li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
                             </ol>
                         </div>
                     </div>
@@ -92,22 +92,12 @@
         <div class="container">
             <div class="row">
                 <!-- service start -->
-                <div class="col-md-9 xcblog-blog-list">
-                                        <div class="row item xcblog-blog-item" data-date="2024-08-01">
-                        <div class="col-md-3">
-                            <a href="/free-nodes/2024-8-1-free-subscribe-node.htm" class="xcblog-blog-url">
-                                <img src="/uploads/20240723/caa9a217a7b44d220cd94af2d5c3ca2c.webp" alt="「8月1日」最高速度19.6M/S，2024年Surge每天更新免费节点订阅链接">
-                            </a>
-                        </div>
-                        <div class="col-md-9">
-                            <a href="/free-nodes/2024-8-1-free-subscribe-node.htm" class="title xcblog-blog-url">
-                                <h3 class="xcblog-blog-title">「8月1日」最高速度19.6M/S，2024年Surge每天更新免费节点订阅链接</h3>
-                            </a>
-                            <p>这一次的节点更新覆盖了韩国、美国、欧洲、新加坡、香港、日本、加拿大等地区,最高速度可达19.6 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
-                        </div>
-                    </div>
-                    
-                    <ul class="pagination"><li><a href="/date/2024-08/page-3.htm">&laquo;</a></li> <li><a href="/date/2024-08/">1</a></li><li><a href="/date/2024-08/page-2.htm">2</a></li><li><a href="/date/2024-08/page-3.htm">3</a></li><li class="active"><span>4</span></li> <li class="disabled"><span>&raquo;</span></li></ul>                </div>
+                <div class="col-md-9">
+                                      				  				  				</h1> <p>fill()方法都知道，填充数组</p> <div>比如：</div> <div> <div class="cnblogs_code"> <pre>let a = <span style="color: rgba(0, 0, 255, 1)">new</span> Array(5).fill(0<span style="color: rgba(0, 0, 0, 1)">); console.log(a); </span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)"> 输出结果为[0, 0, 0, 0, 0]</span></pre> </div> <p>当我们想使用fill创建一个二维数组时</p> <div class="cnblogs_code"> <pre>let arr=<span style="color: rgba(0, 0, 255, 1)">new</span> Array(5).fill(<span style="color: rgba(0, 0, 255, 1)">new</span> Array(5).fill(0<span style="color: rgba(0, 0, 0, 1)">)) console.log(arr)</span></pre> </div> <p>输出</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220507/e547eefd7fd45a596f268bb4ef6e525f.jpg" alt="避坑！js正确地使用fill()初始化二维数组_在线工具"></p> <p> </p> <p> 看似没有什么问题，当我给某个元素重新赋值</p> <div class="cnblogs_code"> <pre>arr[1][1]=1<span style="color: rgba(0, 0, 0, 1)"> console.log(arr)</span></pre> </div> <p>输出</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220507/e389cc520c8450c508c95425d5cffb71.jpg" alt="避坑！js正确地使用fill()初始化二维数组_在线工具"></p> <p> </p> <p> 我只想给arr[1][1]赋值，但是每一个第一维数组的下标为1的元素的值全部改变了，这不是我们想要的。</p> </h1> <p>fill()的参数不是基本类型时，比如数组、对象，并不是将它的值填充到数组，而是将它的地址填充到数组，所以填充后数组的每一项都指向的是同一个对象，就会出现"牵一发而动全身"的现象。</p> </h1> <p>1.老老实实的遍历，不聊</p> <p>2.使用map()给每个第一维的数组分别赋值，<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.runoob.com/jsref/jsref-map.html"  target="_blank"  rel="nofollow">不懂map()点这里</a></p> <div class="cnblogs_code"> <pre>let arr=<span style="color: rgba(0, 0, 255, 1)">new</span> Array(5).fill(0).map(item=&gt;<span style="color: rgba(0, 0, 255, 1)">new</span> Array(5).fill(0<span style="color: rgba(0, 0, 0, 1)">)) arr[</span>1][1]=1<span style="color: rgba(0, 0, 0, 1)"> console.log(arr)</span></pre> </div> <p>输出</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220507/6c264a6e12fe8690c6ecccbced9e7788.jpg" alt="避坑！js正确地使用fill()初始化二维数组_在线工具"></p> <p>这样就只有arr[1][1]发生改变了，完美解决。</p> <p> 原文链接：https://www.cnblogs.com/hmswt/p/14385957.html</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-25469.htm">SpringBoot整合 &#8211; 依赖以及配置文件</a></p>
+                                    </div>
+                                </div>
                 <div class="col-md-3">
                     <div class="panel panel-default">
     <div class="panel-heading">
@@ -115,16 +105,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-9-17-free-node-subscribe.htm" title="「9月17日」最高速度18.1M/S，2024年Surge每天更新免费节点订阅链接">「9月17日」最高速度18.1M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-23-node-share-links.htm" title="「10月23日」最高速度19.6M/S，2024年Surge每天更新免费节点订阅链接">「10月23日」最高速度19.6M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-23159.htm" title="南京宠物托运检疫证明在哪里办理（南京宠物托运南京宠物托运信息）">南京宠物托运检疫证明在哪里办理（南京宠物托运南京宠物托运信息）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-12-free-node-subscribe-links.htm" title="「8月12日」最高速度18.9M/S，2024年Surge每天更新免费节点订阅链接">「8月12日」最高速度18.9M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-30-free-node-subscribe-links.htm" title="「7月30日」最高速度20.6M/S，2024年Surge每天更新免费节点订阅链接">「7月30日」最高速度20.6M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-25-free-subscribe-node.htm" title="「7月25日」最高速度18.5M/S，2024年Surge每天更新免费节点订阅链接">「7月25日」最高速度18.5M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-11-free-node-subscribe-links.htm" title="「9月11日」最高速度18.9M/S，2024年Surge每天更新免费节点订阅链接">「9月11日」最高速度18.9M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-23-node-share-links.htm" title="「8月23日」最高速度19.4M/S，2024年Surge每天更新免费节点订阅链接">「8月23日」最高速度19.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-17-node-share-links.htm" title="「11月17日」最高速度20.9M/S，2024年Surge每天更新免费节点订阅链接">「11月17日」最高速度20.9M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-22-node-share.htm" title="「11月22日」最高速度18.9M/S，2024年Surge每天更新免费节点订阅链接">「11月22日」最高速度18.9M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-free-subscribe-node.htm" title="「11月14日」最高速度21.2M/S，2024年Surge每天更新免费节点订阅链接">「11月14日」最高速度21.2M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-8-node-share.htm" title="「8月8日」最高速度22.3M/S，2024年Surge每天更新免费节点订阅链接">「8月8日」最高速度22.3M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-26-free-high-speed-nodes.htm" title="「10月26日」最高速度22.5M/S，2024年Surge每天更新免费节点订阅链接">「10月26日」最高速度22.5M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-25-node-share-links.htm" title="「10月25日」最高速度18.3M/S，2024年Surge每天更新免费节点订阅链接">「10月25日」最高速度18.3M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24070.htm" title="宠物粮食排行榜前十名品牌图片（宠物粮食排行榜前十名品牌图片大全）">宠物粮食排行榜前十名品牌图片（宠物粮食排行榜前十名品牌图片大全）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-node-share-links.htm" title="「11月8日」最高速度23M/S，2024年Surge每天更新免费节点订阅链接">「11月8日」最高速度23M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-22240.htm" title="宠物疫苗妙三多和辉瑞哪个好?（辉瑞妙三多一共打几针）">宠物疫苗妙三多和辉瑞哪个好?（辉瑞妙三多一共打几针）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-27-node-share-links.htm" title="「9月27日」最高速度18.4M/S，2024年Surge每天更新免费节点订阅链接">「9月27日」最高速度18.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-24-free-node-subscribe-links.htm" title="「10月24日」最高速度22.4M/S，2024年Surge每天更新免费节点订阅链接">「10月24日」最高速度22.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-3-node-share.htm" title="「10月3日」最高速度21.7M/S，2024年Surge每天更新免费节点订阅链接">「10月3日」最高速度21.7M/S，2024年Surge每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
