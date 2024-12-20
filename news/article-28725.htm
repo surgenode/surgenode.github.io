@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-28725.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>python初始化方法</title>
+        <meta name="description" content="python可以用__init__函数进行初始化，子类中可以使用super函数和__init__进行初始化 #encoding:utf-8 class Person(object):     def " />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                                <a href="/" class="navbar-brand">
+                    Surge Node
+                </a>
+                            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">python初始化方法</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>python可以用__init__函数进行初始化，子类中可以使用super函数和__init__进行初始化</p> <pre><code class="prism language-python"><span class="token comment">#encoding:utf-8</span> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">)</span><span class="token punctuation">:</span>         self<span class="token punctuation">.</span>name <span class="token operator">=</span> name         self<span class="token punctuation">.</span>sex <span class="token operator">=</span> sex  <span class="token keyword">class</span> <span class="token class-name">Child</span><span class="token punctuation">(</span>Person<span class="token punctuation">)</span><span class="token punctuation">:</span>                          <span class="token comment"># Child 继承 Person</span>     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>mother<span class="token punctuation">,</span>father<span class="token punctuation">)</span><span class="token punctuation">:</span>         Person<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">)</span>        <span class="token comment"># 子类对父类的构造方法的调用</span>         self<span class="token punctuation">.</span>mother <span class="token operator">=</span> mother         self<span class="token punctuation">.</span>father <span class="token operator">=</span> father   <span class="token keyword">class</span> <span class="token class-name">Child_chg</span><span class="token punctuation">(</span>Person<span class="token punctuation">)</span><span class="token punctuation">:</span>                          <span class="token comment"># Child 继承 Person</span>     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>mother<span class="token punctuation">,</span>father<span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token comment"># Person.__init__(self,name,sex)        # 子类对父类的构造方法的调用</span>         <span class="token builtin">super</span><span class="token punctuation">(</span>Child_chg<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>name<span class="token punctuation">,</span>sex<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>mother <span class="token operator">=</span> mother         self<span class="token punctuation">.</span>father <span class="token operator">=</span> father   <span class="token comment"># class Child_chg(Person):                          # Child 继承 Person</span> <span class="token comment">#     def __init__(self,name,sex,mother,father):</span> <span class="token comment">#         # Person.__init__(self,name,sex)        # 子类对父类的构造方法的调用</span> <span class="token comment">#         super(Child_chg, self).__init__()</span> <span class="token comment">#         self.mother = mother</span> <span class="token comment">#         self.father = father</span>    May <span class="token operator">=</span> Child<span class="token punctuation">(</span><span class="token string">"May"</span><span class="token punctuation">,</span><span class="token string">"female"</span><span class="token punctuation">,</span><span class="token string">"April"</span><span class="token punctuation">,</span><span class="token string">"June"</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span>May<span class="token punctuation">.</span>name<span class="token punctuation">,</span>May<span class="token punctuation">.</span>sex<span class="token punctuation">,</span>May<span class="token punctuation">.</span>mother<span class="token punctuation">,</span>May<span class="token punctuation">.</span>father<span class="token punctuation">)</span>  May_chg <span class="token operator">=</span> Child_chg<span class="token punctuation">(</span><span class="token string">"May"</span><span class="token punctuation">,</span><span class="token string">"female"</span><span class="token punctuation">,</span><span class="token string">"April"</span><span class="token punctuation">,</span><span class="token string">"June"</span><span class="token punctuation">)</span> <span class="token keyword">print</span><span class="token punctuation">(</span>May_chg<span class="token punctuation">.</span>mother<span class="token punctuation">,</span>May_chg<span class="token punctuation">.</span>father<span class="token punctuation">)</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-28255.htm">动物医院取什么名字比较好一点（动物医院取什么名字比较好一点的）</a></p>
+                                        <p>下一个：<a href="/news/article-28726.htm">猫养小猫要多长时间（小猫养多久才能生小猫）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-25-node-share-links.htm" title="「10月25日」最高速度18.3M/S，2024年Surge每天更新免费节点订阅链接">「10月25日」最高速度18.3M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-23-free-subscribe-node.htm" title="「11月23日」最高速度20M/S，2024年Surge每天更新免费节点订阅链接">「11月23日」最高速度20M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-free-high-speed-nodes.htm" title="「11月30日」最高速度19M/S，2024年Surge每天更新免费节点订阅链接">「11月30日」最高速度19M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-17-node-share-links.htm" title="「8月17日」最高速度20.3M/S，2024年Surge每天更新免费节点订阅链接">「8月17日」最高速度20.3M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-1-node-share-links.htm" title="「11月1日」最高速度21.8M/S，2024年Surge每天更新免费节点订阅链接">「11月1日」最高速度21.8M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-3-free-node-subscribe.htm" title="「11月3日」最高速度22.1M/S，2024年Surge每天更新免费节点订阅链接">「11月3日」最高速度22.1M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20866.htm" title="动物接种疫苗,剂量越大越好吗,为什么? 动物接种疫苗,剂量越大越好吗,为什么">动物接种疫苗,剂量越大越好吗,为什么? 动物接种疫苗,剂量越大越好吗,为什么</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-6-free-node-subscribe.htm" title="「12月6日」最高速度19.3M/S，2024年Surge每天更新免费节点订阅链接">「12月6日」最高速度19.3M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-18821.htm" title="java js 二级联动下拉列表_JS实现下拉列表的二级联动">java js 二级联动下拉列表_JS实现下拉列表的二级联动</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-node-share.htm" title="「11月10日」最高速度22.4M/S，2024年Surge每天更新免费节点订阅链接">「11月10日」最高速度22.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
