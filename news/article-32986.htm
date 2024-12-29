@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-32986.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>java8新特性详解_JAVA8 十大新特性详解</title>
+        <meta name="description" content="1 long t0 =System.nanoTime();2 long count =values.stream().sorted().count();3 System.out.println(cou" />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                                <a href="/" class="navbar-brand">
+                    Surge Node
+                </a>
+                            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">java8新特性详解_JAVA8 十大新特性详解</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>1 long t0 =System.nanoTime();2 long count =values.stream().sorted().count();3 System.out.println(count);4 long t1 =System.nanoTime();5 long millis = TimeUnit.NANOSECONDS.toMillis(t1 -t0);6 System.out.println(String.format("sequential sort took: %d ms", millis));</p> <p>// 串行耗时: 899 ms并行排序：</p> <p>1 long t0 =System.nanoTime();2 long count =values.parallelStream().sorted().count();3 System.out.println(count);4 long t1 =System.nanoTime();5 long millis = TimeUnit.NANOSECONDS.toMillis(t1 -t0);6 System.out.println(String.format("parallel sort took: %d ms", millis));</p> <p>// 并行排序耗时: 472 ms</p> <p>上面两个代码几乎是一样的，但是并行版的快了50%之多，唯一需要做的改动就是将stream()改为parallelStream()。</p> <p>Map</p> <p>前面提到过，Map类型不支持stream，不过Map提供了一些新的有用的方法来处理一些日常任务。</p> <p>1 Map map = new HashMap&lt;&gt;();2 for (int i = 0; i &lt; 10; i++) {3 map.putIfAbsent(i, "val" +i);4 }</p> <p>map.forEach((id, val) -&gt; System.out.println(val));</p> <p>以上代码很容易理解， putIfAbsent 不需要我们做额外的存在性检查，而forEach则接收一个Consumer接口来对map里的每一个键值对进行操作。</p> <p>下面的例子展示了map上的其他有用的函数：</p> <p>1 map.computeIfPresent(3, (num, val) -&gt; val +num);2 map.get(3); //val33</p> <p>3 map.computeIfPresent(9, (num, val) -&gt; null);4 map.containsKey(9); //false</p> <p>5 map.computeIfAbsent(23, num -&gt; "val" +num);6 map.containsKey(23); //true</p> <p>7 map.computeIfAbsent(3, num -&gt; "bam");8 map.get(3); //val33</p> <p>接下来展示如何在Map里删除一个键值全都匹配的项：</p> <p>1 map.remove(3, "val3");2 map.get(3); //val33</p> <p>3 map.remove(3, "val33");4 map.get(3); //null</p> <p>另外一个有用的方法</p> <p>map.getOrDefault(42, "not found"); //not found</p> <p>对Map的元素做合并也变得很容易了：</p> <p>1 map.merge(9, "val9", (value, newValue) -&gt;value.concat(newValue));2 map.get(9); //val9</p> <p>3 map.merge(9, "concat", (value, newValue) -&gt;value.concat(newValue));4 map.get(9); //val9concat</p> <p>Merge做的事情是如果键名不存在则插入，否则则对原键对应的值做合并操作并重新插入到map中。</p> <p>九、Date API</p> <p>Java 8 在包java.time下包含了一组全新的时间日期API。新的日期API和开源的Joda-Time库差不多，但又不完全一样，下面的例子展示了这组新API里最重要的一些部分：</p> <p>Clock 时钟</p> <p>Clock类提供了访问当前日期和时间的方法，Clock是时区敏感的，可以用来取代 System.currentTimeMillis()</p> <p>来获取当前的微秒数。某一个特定的时间点也可以使用Instant类来表示，Instant类也可以用来创建老的java.util.Date对象。</p> <p>1 lock clock =Clock.systemDefaultZone();2 long millis =clock.millis();3 Instant instant =clock.instant();4 Date legacyDate = Date.from(instant); //legacy java.util.Date</p> <p>Timezones 时区</p> <p>在新API中时区使用ZoneId来表示。时区可以很方便的使用静态方法of来获取到。 时区定义了到UTS时间的时间差，在Instant时间点对象到本地日期对象之间转换的时候是极其重要的。</p> <p>1 System.out.println(ZoneId.getAvailableZoneIds());2 //prints all available timezone ids</p> <p>3 ZoneId zone1 = ZoneId.of("Europe/Berlin");4 ZoneId zone2 = ZoneId.of("Brazil/East");5 System.out.println(zone1.getRules());6 System.out.println(zone2.getRules());7 //ZoneRules[currentStandardOffset=+01:00]8 //ZoneRules[currentStandardOffset=-03:00]</p> <p>LocalTime 本地时间</p> <p>LocalTime 定义了一个没有时区信息的时间，例如 晚上10点，或者 17:30:15。下面的例子使用前面代码创建的时区创建了两个本地时间。之后比较时间并以小时和分钟为单位计算两个时间的时间差：</p> <p>1 LocalTime now1 =LocalTime.now(zone1);2 LocalTime now2 =LocalTime.now(zone2);3 System.out.println(now1.isBefore(now2)); //false</p> <p>4 long hoursBetween =ChronoUnit.HOURS.between(now1, now2);5 long minutesBetween =ChronoUnit.MINUTES.between(now1, now2);6 System.out.println(hoursBetween); //-3</p> <p>7 System.out.println(minutesBetween); //-239</p> <p>LocalTime 提供了多种工厂方法来简化对象的创建，包括解析时间字符串。</p> <p>1 LocalTime late = LocalTime.of(23, 59, 59);2 System.out.println(late); //23:59:59</p> <p>3 DateTimeFormatter germanFormatter =</p> <p>4 DateTimeFormatter5 .ofLocalizedTime(FormatStyle.SHORT)6 .withLocale(Locale.GERMAN);7 LocalTime leetTime = LocalTime.parse("13:37", germanFormatter);8 System.out.println(leetTime); //13:37</p> <p>LocalDate 本地日期</p> <p>LocalDate 表示了一个确切的日期，比如 2014-03-11。该对象值是不可变的，用起来和LocalTime基本一致。下面的例子展示了如何给Date对象加减天/月/年。另外要注意的是这些对象是不可变的，操作返回的总是一个新实例。</p> <p>1 LocalDate today =LocalDate.now();2 LocalDate tomorrow = today.plus(1, ChronoUnit.DAYS);3 LocalDate yesterday = tomorrow.minusDays(2);4 LocalDate independenceDay = LocalDate.of(2014, Month.JULY, 4);5 DayOfWeek dayOfWeek = independenceDay.getDayOfWeek();</p> <p>System.out.println(dayOfWeek);&nbsp;&nbsp;&nbsp; // FRIDAY从字符串解析一个LocalDate类型和解析LocalTime一样简单：</p> <p>1 DateTimeFormatter germanFormatter =</p> <p>2 DateTimeFormatter3 .ofLocalizedDate(FormatStyle.MEDIUM)4 .withLocale(Locale.GERMAN);5 LocalDate xmas = LocalDate.parse("24.12.2014", germanFormatter);6 System.out.println(xmas); //2014-12-24</p> <p>LocalDateTime 本地日期时间</p> <p>LocalDateTime 同时表示了时间和日期，相当于前两节内容合并到一个对象上了。LocalDateTime和LocalTime还有LocalDate一样，都是不可变的。LocalDateTime提供了一些能访问具体字段的方法。</p> <p>1 LocalDateTime sylvester = LocalDateTime.of(2014, Month.DECEMBER, 31, 23, 59, 59);2 DayOfWeek dayOfWeek =sylvester.getDayOfWeek();3 System.out.println(dayOfWeek); //WEDNESDAY</p> <p>4 Month month =sylvester.getMonth();5 System.out.println(month); //DECEMBER</p> <p>6 long minuteOfDay =sylvester.getLong(ChronoField.MINUTE_OF_DAY);7 System.out.println(minuteOfDay); //1439</p> <p>只要附加上时区信息，就可以将其转换为一个时间点Instant对象，Instant时间点对象可以很容易的转换为老式的java.util.Date。</p> <p>1 Instant instant =sylvester2 .atZone(ZoneId.systemDefault())3 .toInstant();4 Date legacyDate =Date.from(instant);5 System.out.println(legacyDate); //Wed Dec 31 23:59:59 CET 2014</p> <p>格式化LocalDateTime和格式化时间和日期一样的，除了使用预定义好的格式外，我们也可以自己定义格式：</p> <p>1 DateTimeFormatter formatter =</p> <p>2 DateTimeFormatter3 .ofPattern("MMM dd, yyyy - HH:mm");4 LocalDateTime parsed = LocalDateTime.parse("Nov 03, 2014 - 07:13", formatter);5 String string =formatter.format(parsed);6 System.out.println(string); //Nov 03, 2014 - 07:13</p> <p>和java.text.NumberFormat不一样的是新版的DateTimeFormatter是不可变的，所以它是线程安全的。</p> <p>关于时间日期格式的详细信息：http://download.java.net/jdk8/docs/api/java/time/format/DateTimeFormatter.html</p> <p>十、Annotation 注解</p> <p>在Java 8中支持多重注解了，先看个例子来理解一下是什么意思。</p> <p>首先定义一个包装类Hints注解用来放置一组具体的Hint注解：</p> <p>1 @interfaceHints {2 Hint[] value();3 }4 @Repeatable(Hints.class)5 @interfaceHint {6 String value();7 }</p> <p>Java 8允许我们把同一个类型的注解使用多次，只需要给该注解标注一下@Repeatable即可。</p> <p>例 1: 使用包装类当容器来存多个注解(老方法)</p> <p>1 @Hints({@Hint("hint1"), @Hint("hint2")})2 class Person {}</p> <p>例 2：使用多重注解(新方法)</p> <p>1 @Hint("hint1")2 @Hint("hint2")3 class Person {}</p> <p>第二个例子里java编译器会隐性的帮你定义好@Hints注解，了解这一点有助于你用反射来获取这些信息：</p> <p>1 Hint hint = Person.class.getAnnotation(Hint.class);2 System.out.println(hint); //null</p> <p>3 Hints hints1 = Person.class.getAnnotation(Hints.class);4 System.out.println(hints1.value().length); //2</p> <p>5 Hint[] hints2 = Person.class.getAnnotationsByType(Hint.class);6 System.out.println(hints2.length); //2</p> <p>即便我们没有在Person类上定义@Hints注解，我们还是可以通过 getAnnotation(Hints.class) 来获取 @Hints注解，更加方便的方法是使用 getAnnotationsByType 可以直接获取到所有的@Hint注解。另外Java 8的注解还增加到两种新的target上了：</p> <p>1 @Target({ElementType.TYPE_PARAMETER, ElementType.TYPE_USE})2 @interface MyAnnotation {}</p> <p>关于Java 8的新特性就写到这了，肯定还有更多的特性等待发掘。JDK 1.8里还有很多很有用的东西，比如Arrays.parallelSort, StampedLock和CompletableFuture等等。</p> </div> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-32508.htm">动物疫苗价格排行榜最新图片高清大全 动物疫苗价格排行榜最新图片高清大全集</a></p>
+                                        <p>下一个：<a href="/news/article-32989.htm">动物疫苗经营许可证在哪里办的（动物疫苗经营许可证在哪里办的呢）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-24295.htm" title="Vue动态绑定、添加input">Vue动态绑定、添加input</a></li>
+                        <li class="py-2"><a href="/news/article-29642.htm" title="动物打疫苗在哪打的 动物打疫苗在哪打的啊">动物打疫苗在哪打的 动物打疫苗在哪打的啊</a></li>
+                        <li class="py-2"><a href="/news/article-22239.htm" title="Redis的高并发是如何支持的">Redis的高并发是如何支持的</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-5-free-subscribe-node.htm" title="「12月5日」最高速度22.8M/S，2024年Surge每天更新免费节点订阅链接">「12月5日」最高速度22.8M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-23-free-node-subscribe.htm" title="「7月23日」最高速度21.1M/S，2024年Surge每天更新免费节点订阅链接">「7月23日」最高速度21.1M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-29-free-node-subscribe.htm" title="「8月29日」最高速度21M/S，2024年Surge每天更新免费节点订阅链接">「8月29日」最高速度21M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-15-free-subscribe-node.htm" title="「8月15日」最高速度22.6M/S，2024年Surge每天更新免费节点订阅链接">「8月15日」最高速度22.6M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-24-free-high-speed-nodes.htm" title="「8月24日」最高速度19.6M/S，2024年Surge每天更新免费节点订阅链接">「8月24日」最高速度19.6M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-26-free-high-speed-nodes.htm" title="「9月26日」最高速度19.7M/S，2024年Surge每天更新免费节点订阅链接">「9月26日」最高速度19.7M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-2-free-node-subscribe.htm" title="「10月2日」最高速度22M/S，2024年Surge每天更新免费节点订阅链接">「10月2日」最高速度22M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
