@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-36007.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>java.sql.ResultSet</title>
+        <meta name="description" content="java.sql&nbsp; Interface ResultSet      public interface ResultSet  A table of data representing a d" />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                                <a href="/" class="navbar-brand">
+                    Surge Node
+                </a>
+                            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">java.sql.ResultSet</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views">                     <span style="font-family:Simsun; font-size:16px"></span> </p> <h2>java.sql&nbsp;<br /> Interface ResultSet</h2> <div>  <span style="font-family:Simsun; font-size:16px"></span> </p> <dl> <pre>public interface <strong>ResultSet</strong></pre> </dl> <p>A table of data representing a database result set, which is usually generated by executing a statement that queries the database.</p> <p>A&nbsp;<code>ResultSet</code>&nbsp;object maintains a cursor pointing to its current row of data.<span style="color:#3366ff"> Initially the cursor is positioned before the first row. The&nbsp;<code>next</code>&nbsp;method moves the cursor to the next row, and because it returns&nbsp;<code>false</code>&nbsp;when there are no more rows in the&nbsp;<code>ResultSet</code>&nbsp;object, it can be used i</span>n a&nbsp;<code>while</code>&nbsp;loop to iterate through the result set.</p> <p><span style="color:#3366ff">A default&nbsp;<code>ResultSet</code>&nbsp;object is not updatable and has a cursor that moves forward only.</span> Thus, you can iterate through it only once and only from the first row to the last row. It is possible to produce&nbsp;<code>ResultSet</code>&nbsp;objects that are scrollable and/or updatable.<span style="color:#3366ff"> The following code fragment, in which&nbsp;<code>con</code>&nbsp;is a valid&nbsp;<code>Connection</code>&nbsp;object, illustrates how to make a result set that is scrollable and insensitive to updates by others, and that is updatable.</span><span style="color:#6666cc"> </span>See&nbsp;<code>ResultSet</code>&nbsp;fields for other options.</p> <pre><code class="language-java">       Statement stmt = con.createStatement(                                       ResultSet.TYPE_SCROLL_INSENSITIVE,                                       ResultSet.CONCUR_UPDATABLE);        ResultSet rs = stmt.executeQuery("SELECT a, b FROM TABLE2");        // rs will be scrollable, will not show changes made by others,        // and will be updatable</code></pre> <p> The&nbsp;<br />  <code>ResultSet</code>&nbsp;interface provides&nbsp;<br />  <em>getter</em>&nbsp;methods (<br />  <code>getBoolean</code>,&nbsp;<br />  <code>getLong</code>, and so on) for retrieving column values from the current row. Values can be retrieved using either the index number of the column or the name of the column. In general, using the column index will be more efficient. Columns are numbered from 1.<br />  <span style="color:#3366ff">For maximum portability, result set columns within each row should be read in left-to-right order, and each column should be read only once.</span> </p> <p>For the getter methods, a JDBC driver attempts to convert the underlying data to the Java type specified in the getter method and returns a suitable Java value. The JDBC specification has a table showing the allowable mappings from SQL types to Java types that can be used by the&nbsp;<code>ResultSet</code>&nbsp;getter methods.</p> <p>Column names used as input to getter methods are case insensitive. When a getter method is called with a column name and several columns have the same name, the value of the first matching column will be returned. The column name option is designed to be used when column names are used in the SQL query that generated the result set. For columns that are NOT explicitly named in the query, it is best to use column numbers. If column names are used, there is no way for the programmer to guarantee that they actually refer to the intended columns.</p> <p>A set of updater methods were added to this interface in the JDBC 2.0 API (JDK 1.2). The comments regarding parameters to the getter methods also apply to parameters to the updater methods.</p> <p>The updater methods may be used in two ways:</p> <p><span style="white-space:pre"></span>1. to update a column value in the current row<span style="color:#3366ff">. In a scrollable ResultSet object, the cursor can be moved backwards and forwards, to an absolute position, or to a position relative to the current row. </span>The following code fragment updates the NAME column in the fifth row of the ResultSet object rs and then uses the method<em>updateRow</em>to update the data source table from which rs was derived.</p> <pre><code class="language-java">      rs.absolute(5); // moves the cursor to the fifth row of rs        rs.updateString("NAME", "AINSWORTH"); // updates the NAME column of row 5 to be AINSWORTH        rs.updateRow(); // updates the row in the data source</code></pre> <p> <span style="white-space:pre"> </span>2. to insert column values into the insert row.<br />  <span style="color:#3366ff">An updatable ResultSet object has a special row associated with it that serves as a staging area for building a row to be inserted.</span> The following code fragment moves the cursor to the insert row, builds a three-column row, and inserts it into rs and into the data source table using the method insertRow.<br />  </p> <pre><code class="language-java">       rs.moveToInsertRow(); // moves cursor to the insert row        rs.updateString(1, "AINSWORTH"); // updates the            // first column of the insert row to be AINSWORTH        rs.updateInt(2,35); // updates the second column to be 35        rs.updateBoolean(3, true); // updates the third column to true        rs.insertRow();        rs.moveToCurrentRow();</code></pre> <p><span style="color:#3366ff">A&nbsp;<code>ResultSet</code>&nbsp;object is automatically closed when the&nbsp;<code>Statement</code>&nbsp;object that generated it is closed, re-executed, or used to retrieve the next result from a sequence of multiple results.</span></p> <p>The number, types and properties of a&nbsp;<code>ResultSet</code>&nbsp;object's columns are provided by the&nbsp;<code>ResulSetMetaData</code>&nbsp;object returned by the&nbsp;<code>ResultSet.getMetaData</code>&nbsp;method.</p> <p> </div> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-35504.htm">做一个狗粮加工厂怎么样（狗粮加工厂需要什么手续）</a></p>
+                                        <p>下一个：<a href="/news/article-36008.htm">沈阳免费领养猫的地方（沈阳免费领养猫的地方电话）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-6-free-node-subscribe.htm" title="「12月6日」最高速度19.3M/S，2024年Surge每天更新免费节点订阅链接">「12月6日」最高速度19.3M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-node-share.htm" title="「11月9日」最高速度18M/S，2024年Surge每天更新免费节点订阅链接">「11月9日」最高速度18M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-free-node-subscribe.htm" title="「12月28日」最高速度19M/S，2024年Surge每天更新免费节点订阅链接">「12月28日」最高速度19M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-free-node-subscribe.htm" title="「11月29日」最高速度23M/S，2024年Surge每天更新免费节点订阅链接">「11月29日」最高速度23M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-35000.htm" title="畜牧兽医站打疫苗多少钱（畜牧兽医站打疫苗多少钱一针）">畜牧兽医站打疫苗多少钱（畜牧兽医站打疫苗多少钱一针）</a></li>
+                        <li class="py-2"><a href="/news/article-27333.htm" title="开个小型宠物食品加工厂（开个小型宠物食品加工厂需要什么手续）">开个小型宠物食品加工厂（开个小型宠物食品加工厂需要什么手续）</a></li>
+                        <li class="py-2"><a href="/news/article-36007.htm" title="java.sql.ResultSet">java.sql.ResultSet</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-free-subscribe-node.htm" title="「10月12日」最高速度22.9M/S，2024年Surge每天更新免费节点订阅链接">「10月12日」最高速度22.9M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-node-share.htm" title="「12月4日」最高速度18M/S，2024年Surge每天更新免费节点订阅链接">「12月4日」最高速度18M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26399.htm" title="动物疫苗的种类有哪些,各有什么特点呢图片（动物疫苗的种类有哪些,各有什么特点呢图片视频）">动物疫苗的种类有哪些,各有什么特点呢图片（动物疫苗的种类有哪些,各有什么特点呢图片视频）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
