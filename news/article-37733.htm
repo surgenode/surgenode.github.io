@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-37733.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Java中的DatagramPacket与DatagramSocket的初步</title>
+        <meta name="description" content="1.基本概念： 　　a.DatagramPacket与DatagramSocket位于java.net包中 　　b.DatagramPacket表示存放数据的数据报，DatagramSocket表示接" />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                                <a href="/" class="navbar-brand">
+                    Surge Node
+                </a>
+                            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">Java中的DatagramPacket与DatagramSocket的初步</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>1.基本概念：</p> <p>　　a.DatagramPacket与DatagramSocket位于java.net包中</p> <p>　　b.DatagramPacket表示存放数据的数据报，DatagramSocket表示接受或发送数据报的套接字</p> <p>　　c.<strong><span style="color: #ff0000;">由这两个类所有构成的网络链接是基于UDP协议，是一种不可靠的协议。</span></strong></p> <p><strong><span style="color: #ff0000;">　　之所以不可靠是因为发送方不负责数据是否发送成功，接收方收到数据时也不会 　　向发送方反馈成功消息，容易导致信息的丢失。</span></strong></p> <p><strong><span style="color: #ff0000;">　　但是这种协议却是快捷的，比如CS(半条命)游戏就是基于UDP协议，否则我们估计 　　要玩一次游戏后就会把机子砸了，所以我们可以看到游戏有时会失帧。</span></strong></p> <p>　　2.使用方法：</p> <p>　　要建立基于UDP协议的链接，我们应该先建立套接字&lt;DatagramSocket&gt;(即发送站或接收站),之后通过套接字发送或接受数据&lt;DatagramPacket&gt;。</p> <p>　　我们先了解一下DatagramSocket和DatagramPacket类</p> <p>　　DatagramSocket类：</p> <p>　　构造方法：</p> <p>　　DatagramSocket():</p> <p>　　表示创建一个默认的套接字，并绑定到本地地址和一个随机的端口号</p> <p>　　DatagramSocket(int port):</p> <p>　　与上面不同的是，绑定到特定端口号，其它不变</p> <p>　　DatagramSocket(int port, InetAddress iad):</p> <p>　　表示创建一个套接字，绑定到特定的端口号及指定地址</p> <p>　　DatagramSocket(SocketAddress sad);</p> <p>　　表示创建一个套接字，绑定到特定的套接字地址</p> <p>　　小提示：所谓的本地地址我们可以这样来理解，我们通过“控制面板-本地连接-支持”中可以看到一个IP地址，这就是本地的IP地址，也暂且理解为本地地址。</p> <p>　　基本方法：</p> <p>　　close():</p> <p>　　关闭套接字</p> <p>　　recevie(DatagramPacket dp):</p> <p>　　接受数据报</p> <p>　　send(DatagramPacket dp):</p> <p>　发送数据报</p> <p>　　这里触及了数据报，下面介绍数据报：</p> <p>　　DatagramPacket类：</p> <p>　　构造方法：(只列出主要的)</p> <p>　　接受类型：</p> <p>　　DatagramPacket(byte[] buf, int length):</p> <p>　　用来接受长度为length的buf数据(即数据存于字节数组buf中)</p> <p>　　发送类型：</p> <p>　　DatagramPacket(byte[] buf, int length, InetAddress address, int port);</p> <p>　　将length长的buf数据发送到指定的地址的端口号处</p> <p>　　DatagramPacket(byte[] buf, int length, SocketAddress address);</p> <p>　　　将length长的buf数据发送到指定的套接字地址处</p> <p>　　有上面可知，我们发送数据时构造的数据报应该是发送类型的，而接受数据报时应该是接受类型的　 　　</p> <p>　　开始书写代码</p> <p>　　代码意图：</p> <p>　　1.一个接收方，一个发送方</p> <p>　　2.当接收方收到发送方发送的消息后，打印发送的消息及发送方的地址和端口号，之后向发送反馈一条信息“接受方：我收到了！”</p> <p>　　3.发送方打印出接收方反馈的消息</p> <p>　　详细思路见代码：</p> <p><textarea name="code" class="java">import java.net.DatagramPacket;<br /> import java.net.DatagramSocket;<br /> import java.net.InetAddress;</p> <p>public class Sender {<br /> 	public static void main(String[] args) {<br /> 		try {<br /> 			// 创建发送方的套接字，IP默认为本地，端口号随机<br /> 			DatagramSocket sendSocket = new DatagramSocket();</p> <p>			// 确定要发送的消息：<br /> 			String mes = "你好！接收方！";</p> <p>			// 由于数据报的数据是以字符数组传的形式存储的，所以传转数据<br /> 			byte[] buf = mes.getBytes();</p> <p>			// 确定发送方的IP地址及端口号，地址为本地机器地址<br /> 			int port = 8888;<br /> 			InetAddress ip = InetAddress.getLocalHost();</p> <p>			// 创建发送类型的数据报：<br /> 			DatagramPacket sendPacket = new DatagramPacket(buf, buf.length, ip,<br /> 					port);</p> <p>			// 通过套接字发送数据：<br /> 			sendSocket.send(sendPacket);</p> <p>			// 确定接受反馈数据的缓冲存储器，即存储数据的字节数组<br /> 			byte[] getBuf = new byte[1024];</p> <p>			// 创建接受类型的数据报<br /> 			DatagramPacket getPacket = new DatagramPacket(getBuf, getBuf.length);</p> <p>			// 通过套接字接受数据<br /> 			sendSocket.receive(getPacket);</p> <p>			// 解析反馈的消息，并打印<br /> 			String backMes = new String(getBuf, 0, getPacket.getLength());<br /> 			System.out.println("接受方返回的消息：" + backMes);</p> <p>			// 关闭套接字<br /> 			sendSocket.close();<br /> 		} catch (Exception e) {<br /> 			e.printStackTrace();<br /> 		}</p> <p>	}<br /> }</p> <p>import java.net.DatagramPacket;<br /> import java.net.DatagramSocket;<br /> import java.net.InetAddress;<br /> import java.net.SocketAddress;</p> <p>public class Receive {<br /> 	public static void main(String[] args) {<br /> 		try {<br /> 			// 确定接受方的IP和端口号，IP地址为本地机器地址<br /> 			InetAddress ip = InetAddress.getLocalHost();<br /> 			int port = 8888;</p> <p>			// 创建接收方的套接字,并制定端口号和IP地址<br /> 			DatagramSocket getSocket = new DatagramSocket(port, ip);</p> <p>			// 确定数据报接受的数据的数组大小<br /> 			byte[] buf = new byte[1024];</p> <p>			// 创建接受类型的数据报，数据将存储在buf中<br /> 			DatagramPacket getPacket = new DatagramPacket(buf, buf.length);</p> <p>			// 通过套接字接收数据<br /> 			getSocket.receive(getPacket);</p> <p>			// 解析发送方传递的消息，并打印<br /> 			String getMes = new String(buf, 0, getPacket.getLength());<br /> 			System.out.println("对方发送的消息：" + getMes);</p> <p>			// 通过数据报得到发送方的IP和端口号，并打印<br /> 			InetAddress sendIP = getPacket.getAddress();<br /> 			int sendPort = getPacket.getPort();<br /> 			System.out.println("对方的IP地址是：" + sendIP.getHostAddress());<br /> 			System.out.println("对方的端口号是：" + sendPort);</p> <p>			// 通过数据报得到发送方的套接字地址<br /> 			SocketAddress sendAddress = getPacket.getSocketAddress();</p> <p>			// 确定要反馈发送方的消息内容，并转换为字节数组<br /> 			String feedback = "接收方说：我收到了！";<br /> 			byte[] backBuf = feedback.getBytes();</p> <p>			// 创建发送类型的数据报<br /> 			DatagramPacket sendPacket = new DatagramPacket(backBuf,<br /> 					backBuf.length, sendAddress);</p> <p>			// 通过套接字发送数据<br /> 			getSocket.send(sendPacket);</p> <p>			// 关闭套接字<br /> 			getSocket.close();<br /> 		} catch (Exception e) {<br /> 			e.printStackTrace();<br /> 		}<br /> 	}<br /> }<br /> </textarea></p> <p>&nbsp;</p> <p>测试已通过</p> <p>　　先启动接收方，然后启动发送方即可</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-37303.htm">vue使用Vuex状态管理模式_vue.js_</a></p>
+                                        <p>下一个：<a href="/news/article-37734.htm">去宠物店治疗猫藓多少钱（去宠物店治猫藓要多少钱）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-14-free-subscribe-node.htm" title="「10月14日」最高速度21M/S，2024年Surge每天更新免费节点订阅链接">「10月14日」最高速度21M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-31-free-node-subscribe-links.htm" title="「12月31日」最高速度20.2M/S，2025年Surge每天更新免费节点订阅链接">「12月31日」最高速度20.2M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-node-share.htm" title="「12月22日」最高速度21.6M/S，2024年Surge每天更新免费节点订阅链接">「12月22日」最高速度21.6M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-33941.htm" title="动物医院诊疗管理系统设计（动物医院诊疗管理系统设计方案）">动物医院诊疗管理系统设计（动物医院诊疗管理系统设计方案）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-21-free-subscribe-node.htm" title="「10月21日」最高速度20.1M/S，2024年Surge每天更新免费节点订阅链接">「10月21日」最高速度20.1M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-free-node-subscribe.htm" title="「11月29日」最高速度23M/S，2024年Surge每天更新免费节点订阅链接">「11月29日」最高速度23M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-node-share-links.htm" title="「11月8日」最高速度23M/S，2024年Surge每天更新免费节点订阅链接">「11月8日」最高速度23M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-24-free-node-subscribe-links.htm" title="「10月24日」最高速度22.4M/S，2024年Surge每天更新免费节点订阅链接">「10月24日」最高速度22.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-free-high-speed-nodes.htm" title="「11月18日」最高速度20.4M/S，2024年Surge每天更新免费节点订阅链接">「11月18日」最高速度20.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-free-node-subscribe-links.htm" title="「12月25日」最高速度20.9M/S，2024年Surge每天更新免费节点订阅链接">「12月25日」最高速度20.9M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
