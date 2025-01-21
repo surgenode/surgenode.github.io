@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-43725.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Android中EditText光标的显示与隐藏方法</title>
+        <meta name="description" content="目录  Android EditText的光标的显示和隐藏 Android之第一次不显示EditText光标 总结   Android EditText的光标的显示和隐藏 一、java代码 1.编辑框" />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Surge Node节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://surgenode.github.io/news/article-43725.htm" />
+    <meta property="og:site_name" content="Surge Node节点订阅站" />
+    <meta property="og:title" content="Android中EditText光标的显示与隐藏方法" />
+    <meta property="og:image" content="https://surgenode.github.io/uploads/20240723/2f40aa450007a06615f6653231f5edff.webp" />
+        <meta property="og:release_date" content="2025-01-20T07:13:17" />
+    <meta property="og:updated_time" content="2025-01-20T07:13:17" />
+        <meta property="og:description" content="目录  Android EditText的光标的显示和隐藏 Android之第一次不显示EditText光标 总结   Android EditText的光标的显示和隐藏 一、java代码 1.编辑框" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Android中EditText光标的显示与隐藏方法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                                <a href="/" class="navbar-brand">
+                    Surge Node
+                </a>
+                            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">Android中EditText光标的显示与隐藏方法</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>目录</p> <ul> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jb51.net/article/226919.htm#_label0"  title="Android EditText的光标的显示和隐藏" rel="nofollow">Android EditText的光标的显示和隐藏</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jb51.net/article/226919.htm#_label1"  title="Android之第一次不显示EditText光标" rel="nofollow">Android之第一次不显示EditText光标</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jb51.net/article/226919.htm#_label2"  title="总结" rel="nofollow">总结</a></li> </ul> <p><a name="_label0" rel="nofollow"></a></p> <h2 id="heading-0">Android EditText的光标的显示和隐藏</h2> <p><strong>一、java代码</strong></p> <p>1.编辑框的光标 显示的方法：</p> <table border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td> <p>1</p> </td> <td> <p><code>editText.setCursorVisible(</code><code>true</code><code>);</code></p> </td> </tr> </tbody> </table> <p>2.编辑框的光标 隐藏的方法：</p> <table border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td> <p>1</p> </td> <td> <p><code>editText.setCursorVisible(</code><code>false</code><code>);</code></p> </td> </tr> </tbody> </table> <p><strong>二、xml代码</strong></p> <table border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td> <p>1</p> <p>2</p> </td> <td> <p><code>android:cursorVisible="true"</code></p> <p><code>&lt;!--或者“false”--&gt;</code></p> </td> </tr> </tbody> </table> <p><strong>三、点击编辑框的时候显示光标，没有点击的时候隐藏，可以使用如下</strong></p> <table border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td> <p>1</p> <p>2</p> <p>3</p> <p>4</p> <p>5</p> <p>6</p> <p>7</p> <p>8</p> <p>9</p> <p>10</p> <p>11</p> </td> <td> <p><code>EditText editText = (EditText) findViewById(R.id.edittext);</code></p> <p><code>editText.setCursorVisible(</code><code>false</code><code>);</code></p> <p><code>editText.setOnTouchListener(</code><code>new</code> <code>View.OnTouchListener() {<!-- --></code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>@Override</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>public</code> <code>boolean</code> <code>onTouch(View v, MotionEvent event) {<!-- --></code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code>if</code> <code>(MotionEvent.ACTION_DOWN == event.getAction()) {<!-- --></code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code>editText.setCursorVisible(</code><code>true</code><code>);</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code>}</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code>return</code> <code>false</code><code>;</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>}</code></p> <p><code>});</code></p> </td> </tr> </tbody> </table> <p><a name="_label1" rel="nofollow"></a></p> <h2 id="heading-1">Android之第一次不显示EditText光标</h2> <p>光标会默认显示在第一个EditText框中，如果不想显示光标，且也不想把该光标移动到下一个EditText框。</p> <p><strong>解决方法</strong></p> <p>在该 EditText之前增加一个不可见的LinearLayout</p> <table border="0" cellpadding="0" cellspacing="0"> <tbody> <tr> <td> <p>1</p> <p>2</p> <p>3</p> <p>4</p> <p>5</p> </td> <td> <p><code>&lt;LinearLayout </code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>android:focusable=</code><code>"true"</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>android:focusableInTouchMode=</code><code>"true"</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>android:layout_width=</code><code>"0px"</code></p> <p><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><code>android:layout_height=</code><code>"0px"</code> <code>/&gt;</code></p> </td> </tr> </tbody> </table> <p><a name="_label2" rel="nofollow"></a></p> <h2 id="heading-2">总结</h2> <p>到此这篇关于Android中EditText光标的显示与隐藏方法的文章就介绍到这了,更多相关Android EditText光标内容请搜索脚本之家以前的文章或继续浏览下面的相关文章希望大家以后多多支持脚本之家！</p> <p>转载于：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.jb51.net/article/226919.htm"  title="https://www.jb51.net/article/226919.htm" rel="nofollow">https://www.jb51.net/article/226919.htm</a></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-43231.htm">做宠物粮食的上市公司（宠物主粮上市公司）</a></p>
+                                        <p>下一个：<a href="/news/article-43727.htm">广州宠物领养中心,领养宠物要收钱嘛现在 广州宠物领养中心,领养宠物要收钱嘛现在</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-44193.htm" title="常用动物疫苗种类 常用动物疫苗种类及其一般特点">常用动物疫苗种类 常用动物疫苗种类及其一般特点</a></li>
+                        <li class="py-2"><a href="/news/article-36008.htm" title="沈阳免费领养猫的地方（沈阳免费领养猫的地方电话）">沈阳免费领养猫的地方（沈阳免费领养猫的地方电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-node-subscribe-links.htm" title="「11月26日」最高速度21.5M/S，2024年Surge每天更新免费节点订阅链接">「11月26日」最高速度21.5M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-node-share-links.htm" title="「11月6日」最高速度22.5M/S，2024年Surge每天更新免费节点订阅链接">「11月6日」最高速度22.5M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-free-high-speed-nodes.htm" title="「12月26日」最高速度21.7M/S，2024年Surge每天更新免费节点订阅链接">「12月26日」最高速度21.7M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-14-free-subscribe-node.htm" title="「10月14日」最高速度21M/S，2024年Surge每天更新免费节点订阅链接">「10月14日」最高速度21M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-3-free-high-speed-nodes.htm" title="「1月3日」最高速度20.6M/S，2025年Surge每天更新免费节点订阅链接">「1月3日」最高速度20.6M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-27332.htm" title="ES6基础语法之函数介绍_基础知识">ES6基础语法之函数介绍_基础知识</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-29-node-share-links.htm" title="「12月29日」最高速度23M/S，2024年Surge每天更新免费节点订阅链接">「12月29日」最高速度23M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-29642.htm" title="动物打疫苗在哪打的 动物打疫苗在哪打的啊">动物打疫苗在哪打的 动物打疫苗在哪打的啊</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
