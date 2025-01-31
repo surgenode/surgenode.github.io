@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-47681.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>controller使用map接收参数注意事项</title>
+        <meta name="description" content="#关于前端使用map去接收参数的问题 @PostMapping("test01") @ResponseBody                        // 如果这里不加@RequestBody" />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Surge Node节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://surgenode.github.io/news/article-47681.htm" />
+    <meta property="og:site_name" content="Surge Node节点订阅站" />
+    <meta property="og:title" content="controller使用map接收参数注意事项" />
+    <meta property="og:image" content="https://surgenode.github.io/uploads/20240723/4672275afdec6a1b8a7a025fef90f8f4.webp" />
+        <meta property="og:release_date" content="2025-01-28T09:35:13" />
+    <meta property="og:updated_time" content="2025-01-28T09:35:13" />
+        <meta property="og:description" content="#关于前端使用map去接收参数的问题 @PostMapping("test01") @ResponseBody                        // 如果这里不加@RequestBody" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="controller使用map接收参数注意事项">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                                <a href="/" class="navbar-brand">
+                    Surge Node
+                </a>
+                            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">controller使用map接收参数注意事项</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>#关于前端使用map去接收参数的问题</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"test01"</span><span class="token punctuation">)</span> <span class="token annotation punctuation">@ResponseBody</span>                        <span class="token comment">// 如果这里不加@RequestBody，那么springmvc默认创建的是BindAwareModelMap</span> <span class="token keyword">public</span> Object <span class="token function">test01</span><span class="token punctuation">(</span> Map dataMap<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> <span class="token comment">// 对象，并且都参数都不会封装进去</span>     System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>dataMap<span class="token punctuation">)</span><span class="token punctuation">;</span>     dataMap <span class="token operator">=</span> null<span class="token punctuation">;</span>     <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">BindingAwareModelMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 如果返回BindingAwareModelMap对象,就会抛出异常</span> <span class="token punctuation">}</span> </code></pre> <p>#正确封装姿势</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@Controller</span> <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"map"</span><span class="token punctuation">)</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapController</span> <span class="token punctuation">{<!-- --></span>      <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"test01"</span><span class="token punctuation">)</span>     <span class="token annotation punctuation">@ResponseBody</span>                                    <span class="token comment">// 如果加了@RequestBody，那么创建的是LinkedHashMap</span>     <span class="token keyword">public</span> Object <span class="token function">test01</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> Map dataMap<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> <span class="token comment">// 并且参数都封装了进去(url路径参数和json参数都会封装进去)</span>         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>dataMap<span class="token punctuation">)</span><span class="token punctuation">;</span>         dataMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span> <span class="token string">"ojbk"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token keyword">return</span> dataMap<span class="token punctuation">;</span>     <span class="token punctuation">}</span>  <span class="token punctuation">}</span> </code></pre> <p>// 结论：如果使用map接收前端参数，那么一定要加@Requestbody才行</p> <pre><code class="prism language-java">#mybatis使用map封装参数， <span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from t_product where pid = #{pid} or pname = #{pname}"</span><span class="token punctuation">)</span> List<span class="token generics function"><span class="token punctuation">&lt;</span>Product<span class="token punctuation">&gt;</span></span> <span class="token function">getByMap</span><span class="token punctuation">(</span>Map map<span class="token punctuation">)</span><span class="token punctuation">;</span>      #mybatisplus中有写好的方法 List<span class="token generics function"><span class="token punctuation">&lt;</span>T<span class="token punctuation">&gt;</span></span> <span class="token function">selectByMap</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">"cm"</span><span class="token punctuation">)</span> Map<span class="token generics function"><span class="token punctuation">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token punctuation">&gt;</span></span> columnMap<span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <pre><code class="prism language-java">#正确封装姿势<span class="token number">2</span> <span class="token annotation punctuation">@Data</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Page</span> <span class="token punctuation">{<!-- --></span>     <span class="token keyword">private</span> Map dataMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 这里可以不用初始化，加了@RequestBody，默认创建LinkdedHashMap</span> <span class="token punctuation">}</span>  <span class="token annotation punctuation">@Controller</span> <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"map"</span><span class="token punctuation">)</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MapController</span> <span class="token punctuation">{<!-- --></span>      <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"test01"</span><span class="token punctuation">)</span>     <span class="token annotation punctuation">@ResponseBody</span>     <span class="token keyword">public</span> Object <span class="token function">test01</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> Page page<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> <span class="token comment">// 一定要加@RequestBody，否则封装不进去</span>         <span class="token keyword">return</span> page<span class="token punctuation">;</span>     <span class="token punctuation">}</span>  <span class="token punctuation">}</span> 前端需要使用json传参格式： <span class="token punctuation">{<!-- --></span>     <span class="token string">"dataMap"</span><span class="token operator">:</span><span class="token punctuation">{<!-- --></span>         <span class="token string">"name"</span><span class="token operator">:</span><span class="token string">"zzhua"</span>     <span class="token punctuation">}</span> <span class="token punctuation">}</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-47680.htm">如果MySQL TIMEDIFF()函数的输出超过TIME字段的范围值，会发生什么？</a></p>
+                                        <p>下一个：<a href="/news/article-48172.htm">设置feign配置日志级别</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-41245.htm" title="附近免费领养狗边牧（附近免费领养狗边牧的地方）">附近免费领养狗边牧（附近免费领养狗边牧的地方）</a></li>
+                        <li class="py-2"><a href="/news/article-35000.htm" title="畜牧兽医站打疫苗多少钱（畜牧兽医站打疫苗多少钱一针）">畜牧兽医站打疫苗多少钱（畜牧兽医站打疫苗多少钱一针）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-free-subscribe-node.htm" title="「1月8日」最高速度20.5M/S，2025年Surge每天更新免费节点订阅链接">「1月8日」最高速度20.5M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24295.htm" title="Vue动态绑定、添加input">Vue动态绑定、添加input</a></li>
+                        <li class="py-2"><a href="/news/article-23158.htm" title="中北镇天宠宠物医院电话（天津市天宠宠物医院）">中北镇天宠宠物医院电话（天津市天宠宠物医院）</a></li>
+                        <li class="py-2"><a href="/news/article-48173.htm" title="狂犬疫苗多少钱一针一共打几针（狂犬疫苗多少钱一针一共打几针2020）">狂犬疫苗多少钱一针一共打几针（狂犬疫苗多少钱一针一共打几针2020）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-20-node-share-links.htm" title="「11月20日」最高速度20M/S，2024年Surge每天更新免费节点订阅链接">「11月20日」最高速度20M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-free-subscribe-node.htm" title="「12月18日」最高速度18.5M/S，2024年Surge每天更新免费节点订阅链接">「12月18日」最高速度18.5M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-free-node-subscribe.htm" title="「10月15日」最高速度21.4M/S，2024年Surge每天更新免费节点订阅链接">「10月15日」最高速度21.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-26-free-node-subscribe.htm" title="「1月26日」最高速度19.8M/S，2025年Surge每天更新免费节点订阅链接">「1月26日」最高速度19.8M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-48172.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>设置feign配置日志级别</title>
+        <meta name="description" content="设置feign配置日志级别 基于《&lt;spring-cloud.version&gt;Greenwich.RC2&lt;/spring-cloud.version&gt;》 根据spring cl" />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Surge Node节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://surgenode.github.io/news/article-48172.htm" />
+    <meta property="og:site_name" content="Surge Node节点订阅站" />
+    <meta property="og:title" content="设置feign配置日志级别" />
+    <meta property="og:image" content="https://surgenode.github.io/uploads/20240723/eb0c4dfa36ddf7703195eff7546e2b45.webp" />
+        <meta property="og:release_date" content="2025-01-29T10:30:11" />
+    <meta property="og:updated_time" content="2025-01-29T10:30:11" />
+        <meta property="og:description" content="设置feign配置日志级别 基于《&lt;spring-cloud.version&gt;Greenwich.RC2&lt;/spring-cloud.version&gt;》 根据spring cl" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="设置feign配置日志级别">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                                <a href="/" class="navbar-brand">
+                    Surge Node
+                </a>
+                            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">设置feign配置日志级别</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-dracula"> <h2><a id="feign_2" rel="nofollow"></a>设置feign配置日志级别</h2> <p><em>基于《&lt;spring-cloud.version&gt;Greenwich.RC2&lt;/spring-cloud.version&gt;》</em></p> <p>根据spring cloud文档:<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cloud.spring.io/spring-cloud-static/Greenwich.RC2/single/spring-cloud.html#_feign_logging"  rel="nofollow">https://cloud.spring.io/spring-cloud-static/Greenwich.RC2/single/spring-cloud.html#_feign_logging</a></p> <h3><a id="feign_12" rel="nofollow"></a>feign日志</h3> <p>在创建feign client的时候，就创建了logger, 默认logger的名称是创建feign client的服务接口类的全路径，通俗的来讲就是加了<code>@FeignClient</code>接口类的全路径</p> <p>首先在<code>application.yml</code>文件中指定日志级别:</p> <pre><code class="prism language-yml"><span class="token key atrule">logging</span><span class="token punctuation">:</span><span class="token key atrule">level</span><span class="token punctuation">:</span><span class="token key atrule">com.**.api.service.IFeignService</span><span class="token punctuation">:</span> DEBUG</code></pre> <h3><a id="_25" rel="nofollow"></a>设置日志记录的级别</h3> <p>logger有四种类型:<code>NONE</code>,<code>BASIC</code>,<code>HEADERS</code>,<code>FULL</code>,通过注册Bean来设置日志记录级别:</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@Configuration</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">LogConfiguration</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@Bean</span>     Logger<span class="token punctuation">.</span>Level<span class="token function">feignLoggerLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span> Logger<span class="token punctuation">.</span>Level<span class="token punctuation">.</span>FULL<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>在feign client加上：</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@FeignClient</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"IFeignService"</span><span class="token punctuation">,</span> configuration<span class="token operator">=</span> LogConfiguration<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token keyword">interface</span><span class="token class-name">IFeignService</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"/index"</span><span class="token punctuation">,</span> method<span class="token operator">=</span> RequestMethod<span class="token punctuation">.</span>GET<span class="token punctuation">)</span><span class="token keyword">public</span> String<span class="token function">invokeSayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>日志记录结果:</p> <pre><code class="prism language-console">2018-12-31    c.g.v.f.c.api.service.IFeignService  &lt;--- HTTP/1.1 200 (462ms) 2018-12-31    c.g.v.f.c.api.service.IFeignService  content-length: 5 2018-12-31    c.g.v.f.c.api.service.IFeignService  content-type: text/plain;charset=UTF-8 2018-12-31    c.g.v.f.c.api.service.IFeignService  date: Mon, 31 Dec 2018 13:35:48 GMT 2018-12-31    c.g.v.f.c.api.service.IFeignService  2018-12-31    c.g.v.f.c.api.service.IFeignService  index 2018-12-31    c.g.v.f.c.api.service.IFeignService  &lt;--- END HTTP (5-byte body)</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-47681.htm">controller使用map接收参数注意事项</a></p>
+                                        <p>下一个：<a href="/news/article-48173.htm">狂犬疫苗多少钱一针一共打几针（狂犬疫苗多少钱一针一共打几针2020）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-29188.htm" title="闲鱼怎么做无货源赚钱视频教程（闲鱼无货源赚钱详细教程视频）">闲鱼怎么做无货源赚钱视频教程（闲鱼无货源赚钱详细教程视频）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-23-node-share-links.htm" title="「1月23日」最高速度20.9M/S，2025年Surge每天更新免费节点订阅链接">「1月23日」最高速度20.9M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-16-node-share-links.htm" title="「1月16日」最高速度22.5M/S，2025年Surge每天更新免费节点订阅链接">「1月16日」最高速度22.5M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25938.htm" title="猫粮机器怎么做猫粮视频教程（猫粮制作机器设备）">猫粮机器怎么做猫粮视频教程（猫粮制作机器设备）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-28-free-subscribe-node.htm" title="「11月28日」最高速度19.9M/S，2024年Surge每天更新免费节点订阅链接">「11月28日」最高速度19.9M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-27794.htm" title="义乌领养宠物猫吧最新消息（义乌宠物收容中心在哪）">义乌领养宠物猫吧最新消息（义乌宠物收容中心在哪）</a></li>
+                        <li class="py-2"><a href="/news/article-20407.htm" title="小动物打疫苗视频大全（小动物打疫苗视频大全图片）">小动物打疫苗视频大全（小动物打疫苗视频大全图片）</a></li>
+                        <li class="py-2"><a href="/news/article-47189.htm" title="宠物零食加工厂要投资多少亿（宠物食品加工厂要投资多少）">宠物零食加工厂要投资多少亿（宠物食品加工厂要投资多少）</a></li>
+                        <li class="py-2"><a href="/news/article-49161.htm" title="Spring Boot 2.3 新特性分层JAR详解">Spring Boot 2.3 新特性分层JAR详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-free-high-speed-nodes.htm" title="「12月26日」最高速度21.7M/S，2024年Surge每天更新免费节点订阅链接">「12月26日」最高速度21.7M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

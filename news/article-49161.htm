@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-49161.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Spring Boot 2.3 新特性分层JAR详解</title>
+        <meta name="description" content="背景 在我们实际生产容器化部署过程中，往往会遇到 Docker 镜像很大，部署发布很慢的情况 影响 docker 镜像大小的因素，主要有以下三个方面：    基础镜像的大小 。尽量选择 aphine " />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Surge Node节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://surgenode.github.io/news/article-49161.htm" />
+    <meta property="og:site_name" content="Surge Node节点订阅站" />
+    <meta property="og:title" content="Spring Boot 2.3 新特性分层JAR详解" />
+    <meta property="og:image" content="https://surgenode.github.io/uploads/20240723/2f40aa450007a06615f6653231f5edff.webp" />
+        <meta property="og:release_date" content="2025-01-31T07:20:20" />
+    <meta property="og:updated_time" content="2025-01-31T07:20:20" />
+        <meta property="og:description" content="背景 在我们实际生产容器化部署过程中，往往会遇到 Docker 镜像很大，部署发布很慢的情况 影响 docker 镜像大小的因素，主要有以下三个方面：    基础镜像的大小 。尽量选择 aphine " />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Spring Boot 2.3 新特性分层JAR详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                                <a href="/" class="navbar-brand">
+                    Surge Node
+                </a>
+                            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">Spring Boot 2.3 新特性分层JAR详解</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-github-gist"> <h2 id="背景">背景</h2> <p>在我们实际生产容器化部署过程中，往往会遇到 Docker 镜像很大，部署发布很慢的情况</p> <p>影响 docker 镜像大小的因素，主要有以下三个方面：</p> <ul> <li> <ol> <li>基础镜像的大小 。尽量选择 aphine 作为基础镜像 减少操作系统内置软件</li> </ol> </li> <li> <ol start="2"> <li>Dockerfile 指令层数。 这就要求我们优化 Dockerfile 能合并在一行的尽量合并等</li> </ol> </li> <li> <ol start="3"> <li>应用 jar 的大小。这是今天要分享的重点内容</li> </ol> </li> </ul> <h3 id="helloworld-镜像">helloworld 镜像</h3> <p>我们先来基于<code>spring boot 2.3.0</code> 构建一个最简单的 web helloworld，然后构建镜像。</p> <pre><code>FROM adoptopenjdk:11-jre-hotspot as builder WORKDIR application ARG JAR_FILE=target/*.jar COPY ${JAR_FILE} application.jar ENTRYPOINT ["java", "-jar application.jar"]</code></pre> <pre><code>docker build --build-arg JAR_FILE=./demo-layer-0.0.1-SNAPSHOT.jar  . -t demo:v1.0</code></pre> <h3 id="查看镜像分层信息">查看镜像分层信息</h3> <p>我们通过<code>docker inspect demo:v1.0</code> 来看下此镜像的每层的散列值</p> <pre><code>// demo:v1.0 版本镜像分层信息摘要 "Layers": [     "sha256:b7f7d2967507ba709dbd1dd0426a5b0cdbe1ff936c131f8958c8d0f910eea19e",     "sha256:a6ebef4a95c345c844c2bf43ffda8e36dd6e053887dd6e283ad616dcc2376be6",     "sha256:838a37a24627f72df512926fc846dd97c93781cf145690516e23335cc0c27794",     "sha256:28ba7458d04b8551ff45d2e17dc2abb768bf6ed1a46bb262f26a24d21d8d7233",     "sha256:55c91231ac46fdd63c3cf84b88b11f8a04c1870482dcff033029a601bc50e1ab",     "sha256:9816c2d488754509f6024a267738b1e5fe33a7cd33bd25c5a9cdf6d4d7bfed1d",     "sha256:f5fb3f91797d57a92f3f7e033398b8edd094df664db849a4950eabf2f5474535",     "sha256:b87d2ff74819f83038ea2f89736a19cfcf99bfa080b8017d191c900a09a7524f" ]</code></pre> <h3 id="helloworld-升级重新构建">helloworld 升级重新构建</h3> <p>我们对<code>helloworld</code> 程序进行部分修改（模拟开发过程），然后重新构建镜像</p> <pre><code>docker build --build-arg JAR_FILE=./demo-layer-0.0.1-SNAPSHOT.jar  . -t demo:v1.1</code></pre> <p>此时镜像分层信息如下<code>docker inspect demo:v1.1</code></p> <pre><code>// demo:v1.1 版本镜像分层信息摘要 "Layers": [     "sha256:b7f7d2967507ba709dbd1dd0426a5b0cdbe1ff936c131f8958c8d0f910eea19e",     "sha256:a6ebef4a95c345c844c2bf43ffda8e36dd6e053887dd6e283ad616dcc2376be6",     "sha256:838a37a24627f72df512926fc846dd97c93781cf145690516e23335cc0c27794",     "sha256:28ba7458d04b8551ff45d2e17dc2abb768bf6ed1a46bb262f26a24d21d8d7233",     "sha256:55c91231ac46fdd63c3cf84b88b11f8a04c1870482dcff033029a601bc50e1ab",     "sha256:9816c2d488754509f6024a267738b1e5fe33a7cd33bd25c5a9cdf6d4d7bfed1d",     "sha256:f5fb3f91797d57a92f3f7e033398b8edd094df664db849a4950eabf2f5474535",     "sha256:c1b6350d545fea605e0605c4bfd7f4529cfeee3f6759750d6a5ddeb9c882fc8f" ]</code></pre> <h3 id="比较-v10、v11-镜像">比较 v1.0、v1.1 镜像</h3> <p>通过比较 v1.0 和 v1.1 版本的镜像摘要信息，我们会发现只有最后的一层发生了变化，我们通过<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/wagoodman/dive"  rel="nofollow">Dive 是一个用 Go 语言编写的 Docker 镜像分析工具</a> 来确定一下 最后一层是做了哪些事情</p> <p><code>dive demo:v1.0</code>,<strong>大家会看到是最后的 jar 不一样 导致 16M 的内容需要重新构建，当你的业务 jar 很大时，这块就是性能瓶颈</strong></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/6c4024b10bd7fd505718b6724f636a41.jpg" alt="Spring Boot 2.3 新特性分层JAR详解"></p> <h3 id="spring-boot-默认打包解密">spring boot 默认打包解密</h3> <p>默认情况下，spring boot 构建出来的 jar ,解压后可以看到如下目录结构。默认会当做一个整体 ，在构建镜像时作为一个单独层，<strong>没有区分业务 classes 和 引用的第三方 jar</strong></p> <pre><code>META-INF/   MANIFEST.MF org/   springframework/     boot/       loader/ BOOT-INF/   classes/   lib/</code></pre> <h2 id="layer-jar">layer jar</h2> <p>通过上文大家就可以知道分层 jar 的思想就是把，jar 再根据规则细分，业务 class 和 三方 jar 分别对应镜像的不同层，这样改动业务代码，只需变动很少的内容 提高构建速度。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220602/15af560875e1a3e3085852aeb24ba5de.jpg" alt="Spring Boot 2.3 新特性分层JAR详解"></p> <h3 id="开启分层打包">开启分层打包</h3> <pre><code>  &lt;plugin&gt;     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;     &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;     &lt;configuration&gt;       &lt;layers&gt;         &lt;enabled&gt;true&lt;/enabled&gt;       &lt;/layers&gt;     &lt;/configuration&gt;   &lt;/plugin&gt;</code></pre> <h3 id="编写支持分层-dockerfile">编写支持分层 Dockerfile</h3> <p>核心是通过 spring boot 提供的<code>layertools</code> 工具，将 jar 进行拆分 然后通过 COPY 指令去分别加载</p> <pre><code>FROM adoptopenjdk:11-jre-hotspot as builder WORKDIR application ARG JAR_FILE=target/*.jar COPY ${JAR_FILE} application.jar RUN java -Djarmode=layertools -jar application.jar extract FROM adoptopenjdk:11-jre-hotspot WORKDIR application COPY --from=builder application/dependencies/ ./ COPY --from=builder application/spring-boot-loader/ ./ COPY --from=builder application/snapshot-dependencies/ ./ COPY --from=builder application/application/ ./ ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]</code></pre> <h3 id="构建新镜像并查看分层信息">构建新镜像并查看分层信息</h3> <pre><code>docker build --build-arg JAR_FILE=./demo-layer-0.0.1-SNAPSHOT.jar  . -t demo:v2.0</code></pre> <pre><code>"Layers": [     "sha256:b7f7d2967507ba709dbd1dd0426a5b0cdbe1ff936c131f8958c8d0f910eea19e",     "sha256:a6ebef4a95c345c844c2bf43ffda8e36dd6e053887dd6e283ad616dcc2376be6",     "sha256:838a37a24627f72df512926fc846dd97c93781cf145690516e23335cc0c27794",     "sha256:28ba7458d04b8551ff45d2e17dc2abb768bf6ed1a46bb262f26a24d21d8d7233",     "sha256:55c91231ac46fdd63c3cf84b88b11f8a04c1870482dcff033029a601bc50e1ab",     "sha256:9816c2d488754509f6024a267738b1e5fe33a7cd33bd25c5a9cdf6d4d7bfed1d",     "sha256:f5fb3f91797d57a92f3f7e033398b8edd094df664db849a4950eabf2f5474535",     "sha256:06fe18cf8ae7384f120f2c6a3a33b31999dd0460cf1edae45e8f13adeab35942",     "sha256:16cf814564b8a667fcc9f07314b6084cbef8dc8c0a6565c7a2d91d74faf7e7de",     "sha256:94be40f716016b68cdd6b99d2cb8154acf8475c3a170a898a22f95a8ef40ffd3",     "sha256:427d87d6a5fe6da13cb4233939c3a1ff920bc6b4d2f14b5d78af7aef98fda7de" ]</code></pre> <p>修改代码部分业务代码，重新构建</p> <pre><code>docker build --build-arg JAR_FILE=./demo-layer-0.0.1-SNAPSHOT.jar  . -t demo:v2.1</code></pre> <pre><code>"Layers": [     "sha256:b7f7d2967507ba709dbd1dd0426a5b0cdbe1ff936c131f8958c8d0f910eea19e",     "sha256:a6ebef4a95c345c844c2bf43ffda8e36dd6e053887dd6e283ad616dcc2376be6",     "sha256:838a37a24627f72df512926fc846dd97c93781cf145690516e23335cc0c27794",     "sha256:28ba7458d04b8551ff45d2e17dc2abb768bf6ed1a46bb262f26a24d21d8d7233",     "sha256:55c91231ac46fdd63c3cf84b88b11f8a04c1870482dcff033029a601bc50e1ab",     "sha256:9816c2d488754509f6024a267738b1e5fe33a7cd33bd25c5a9cdf6d4d7bfed1d",     "sha256:f5fb3f91797d57a92f3f7e033398b8edd094df664db849a4950eabf2f5474535",     "sha256:06fe18cf8ae7384f120f2c6a3a33b31999dd0460cf1edae45e8f13adeab35942",     "sha256:16cf814564b8a667fcc9f07314b6084cbef8dc8c0a6565c7a2d91d74faf7e7de",     "sha256:94be40f716016b68cdd6b99d2cb8154acf8475c3a170a898a22f95a8ef40ffd3",     "sha256:8a20c60d361696a4e480fb6fbe1daf8b88bc54c579a98e209da1fb76e25de5aa" ]</code></pre> <h3 id="查看区别层镜像">查看区别层镜像</h3> <p>最后一层变动大小为 5KB<img decoding="async" src="http://img.555519.xyz/uploads3/20220602/1718afce4382495587775ad65cf9b5e5.jpg" alt="Spring Boot 2.3 新特性分层JAR详解"></p> <h2 id="总结">总结</h2> <ul> <li>16MB -&gt; 5KB 变动，在实际开发过程中 效果会更加明显</li> <li>可以通过 spring boot maven plugin 指定分层逻辑，具体可以参考官方文档</li> <li>官方文档：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/maven-plugin/reference/html"  rel="nofollow">https://docs.spring.io/spring-boot/docs/2.3.0.RELEASE/maven-plugin/reference/html</a></li> </ul> <p></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-49160.htm">使用Android DataBinding时发现只能显示一次，不能动态更新数据</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-41244.htm" title="猫三联最晚什么时候打第一针（猫三联最晚什么时候打第一针疫苗）">猫三联最晚什么时候打第一针（猫三联最晚什么时候打第一针疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-19494.htm" title="猫三联要几针才能打疫苗（猫三联一共几针分几次打完?）">猫三联要几针才能打疫苗（猫三联一共几针分几次打完?）</a></li>
+                        <li class="py-2"><a href="/news/article-25938.htm" title="猫粮机器怎么做猫粮视频教程（猫粮制作机器设备）">猫粮机器怎么做猫粮视频教程（猫粮制作机器设备）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-5-node-share-links.htm" title="「1月5日」最高速度20.6M/S，2025年Surge每天更新免费节点订阅链接">「1月5日」最高速度20.6M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23159.htm" title="南京宠物托运检疫证明在哪里办理（南京宠物托运南京宠物托运信息）">南京宠物托运检疫证明在哪里办理（南京宠物托运南京宠物托运信息）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-28-free-subscribe-node.htm" title="「11月28日」最高速度19.9M/S，2024年Surge每天更新免费节点订阅链接">「11月28日」最高速度19.9M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-32508.htm" title="动物疫苗价格排行榜最新图片高清大全 动物疫苗价格排行榜最新图片高清大全集">动物疫苗价格排行榜最新图片高清大全 动物疫苗价格排行榜最新图片高清大全集</a></li>
+                        <li class="py-2"><a href="/news/article-33940.htm" title="中国十大宠物食品公司 中国十大宠物食品公司排名">中国十大宠物食品公司 中国十大宠物食品公司排名</a></li>
+                        <li class="py-2"><a href="/news/article-39274.htm" title="动物医院管理制度在哪网站可以查询到（动物医院监管部门）">动物医院管理制度在哪网站可以查询到（动物医院监管部门）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-26-free-node-subscribe.htm" title="「1月26日」最高速度19.8M/S，2025年Surge每天更新免费节点订阅链接">「1月26日」最高速度19.8M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
