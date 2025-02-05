@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://surgenode.github.io/news/article-28254.htm" />
@@ -10,6 +10,34 @@
     <title>用 Python 定义 Schema 并生成 Parquet 文件</title>
         <meta name="description" content="  原来用 Java 和 Python 实现过 Avro 转换成 Parquet 格式，所以 Schema 都是在 Avro 中定义的。这里要尝试的是如何定义 Parquet 的 Schema, 然后" />
         <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Surge Node节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://surgenode.github.io/news/article-28254.htm" />
+    <meta property="og:site_name" content="Surge Node节点订阅站" />
+    <meta property="og:title" content="用 Python 定义 Schema 并生成 Parquet 文件" />
+    <meta property="og:image" content="https://surgenode.github.io/uploads/20240723/a743971ba0dacdf0c9b23e00ab58c128.webp" />
+        <meta property="og:release_date" content="2024-12-19T09:56:10" />
+    <meta property="og:updated_time" content="2024-12-19T09:56:10" />
+        <meta property="og:description" content="  原来用 Java 和 Python 实现过 Avro 转换成 Parquet 格式，所以 Schema 都是在 Avro 中定义的。这里要尝试的是如何定义 Parquet 的 Schema, 然后" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="用 Python 定义 Schema 并生成 Parquet 文件">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
     <!-- Bootstrap -->
     <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
@@ -107,16 +135,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-3-node-share.htm" title="「10月3日」最高速度21.7M/S，2024年Surge每天更新免费节点订阅链接">「10月3日」最高速度21.7M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-21-free-node-subscribe.htm" title="「9月21日」最高速度22.7M/S，2024年Surge每天更新免费节点订阅链接">「9月21日」最高速度22.7M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-19-free-node-subscribe-links.htm" title="「8月19日」最高速度21.3M/S，2024年Surge每天更新免费节点订阅链接">「8月19日」最高速度21.3M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-9-node-share.htm" title="「10月9日」最高速度21.4M/S，2024年Surge每天更新免费节点订阅链接">「10月9日」最高速度21.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-21324.htm" title="动物疫苗属于疫苗分类吗为什么（动物疫苗的分类）">动物疫苗属于疫苗分类吗为什么（动物疫苗的分类）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-10-free-high-speed-nodes.htm" title="「8月10日」最高速度21.9M/S，2024年Surge每天更新免费节点订阅链接">「8月10日」最高速度21.9M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-24296.htm" title="聊城宠物批发市场（聊城宠物批发市场在哪里）">聊城宠物批发市场（聊城宠物批发市场在哪里）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-14-node-share-links.htm" title="「8月14日」最高速度21.3M/S，2024年Surge每天更新免费节点订阅链接">「8月14日」最高速度21.3M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-24-free-high-speed-nodes.htm" title="「8月24日」最高速度19.6M/S，2024年Surge每天更新免费节点订阅链接">「8月24日」最高速度19.6M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-17-free-node-subscribe.htm" title="「9月17日」最高速度18.1M/S，2024年Surge每天更新免费节点订阅链接">「9月17日」最高速度18.1M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-node-share.htm" title="「11月25日」最高速度21.8M/S，2024年Surge每天更新免费节点订阅链接">「11月25日」最高速度21.8M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-46706.htm" title="利用MybatisPlus两步实现多租户方案">利用MybatisPlus两步实现多租户方案</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-15-free-node-subscribe.htm" title="「12月15日」最高速度20.1M/S，2024年Surge每天更新免费节点订阅链接">「12月15日」最高速度20.1M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-36812.htm" title="动物医学研究疫苗（动物医学研究疫苗吗）">动物医学研究疫苗（动物医学研究疫苗吗）</a></li>
+                        <li class="py-2"><a href="/news/article-42238.htm" title="济南美联英语地址（美联英语培训地址）">济南美联英语地址（美联英语培训地址）</a></li>
+                        <li class="py-2"><a href="/news/article-41244.htm" title="猫三联最晚什么时候打第一针（猫三联最晚什么时候打第一针疫苗）">猫三联最晚什么时候打第一针（猫三联最晚什么时候打第一针疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-35001.htm" title="青岛动物学院（青岛动物学院招生简章）">青岛动物学院（青岛动物学院招生简章）</a></li>
+                        <li class="py-2"><a href="/news/article-37733.htm" title="Java中的DatagramPacket与DatagramSocket的初步">Java中的DatagramPacket与DatagramSocket的初步</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-free-subscribe-node.htm" title="「11月12日」最高速度21.2M/S，2024年Surge每天更新免费节点订阅链接">「11月12日」最高速度21.2M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-40252.htm" title="动物防疫站能打疫苗吗（动物防疫站可以驱虫吗）">动物防疫站能打疫苗吗（动物防疫站可以驱虫吗）</a></li>
                     </ul>
     </div>
 </div>
@@ -128,25 +156,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>

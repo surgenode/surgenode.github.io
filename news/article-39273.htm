@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://surgenode.github.io/news/article-39273.htm" />
@@ -10,6 +10,34 @@
     <title>Elasticsearch Mapping 中配置自定义Analyzer</title>
         <meta name="description" content="多字段特性  默认text 类型会有一个keyword 字段类型  什么情况下使用多字段？  公司名字实现精确匹配 使用不同的Analyzer  不同语言 pinyin字段的搜索 还支持为搜索和索引指" />
         <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Surge Node节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://surgenode.github.io/news/article-39273.htm" />
+    <meta property="og:site_name" content="Surge Node节点订阅站" />
+    <meta property="og:title" content="Elasticsearch Mapping 中配置自定义Analyzer" />
+    <meta property="og:image" content="https://surgenode.github.io/uploads/20240723/4672275afdec6a1b8a7a025fef90f8f4.webp" />
+        <meta property="og:release_date" content="2025-01-11T10:04:58" />
+    <meta property="og:updated_time" content="2025-01-11T10:04:58" />
+        <meta property="og:description" content="多字段特性  默认text 类型会有一个keyword 字段类型  什么情况下使用多字段？  公司名字实现精确匹配 使用不同的Analyzer  不同语言 pinyin字段的搜索 还支持为搜索和索引指" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Elasticsearch Mapping 中配置自定义Analyzer">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
     <!-- Bootstrap -->
     <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
@@ -107,16 +135,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-20408.htm" title="家养泰迪出售（自家泰迪出售）">家养泰迪出售（自家泰迪出售）</a></li>
-                        <li class="py-2"><a href="/news/article-19494.htm" title="猫三联要几针才能打疫苗（猫三联一共几针分几次打完?）">猫三联要几针才能打疫苗（猫三联一共几针分几次打完?）</a></li>
-                        <li class="py-2"><a href="/news/article-31079.htm" title="加盟狗粮加工厂多少钱 加盟狗粮加工厂多少钱一个月">加盟狗粮加工厂多少钱 加盟狗粮加工厂多少钱一个月</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-1-node-share-links.htm" title="「11月1日」最高速度21.8M/S，2024年Surge每天更新免费节点订阅链接">「11月1日」最高速度21.8M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-32508.htm" title="动物疫苗价格排行榜最新图片高清大全 动物疫苗价格排行榜最新图片高清大全集">动物疫苗价格排行榜最新图片高清大全 动物疫苗价格排行榜最新图片高清大全集</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-27-node-share.htm" title="「12月27日」最高速度18.7M/S，2024年Surge每天更新免费节点订阅链接">「12月27日」最高速度18.7M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-14-free-node-subscribe.htm" title="「12月14日」最高速度21.7M/S，2024年Surge每天更新免费节点订阅链接">「12月14日」最高速度21.7M/S，2024年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-23159.htm" title="南京宠物托运检疫证明在哪里办理（南京宠物托运南京宠物托运信息）">南京宠物托运检疫证明在哪里办理（南京宠物托运南京宠物托运信息）</a></li>
-                        <li class="py-2"><a href="/news/article-32986.htm" title="java8新特性详解_JAVA8 十大新特性详解">java8新特性详解_JAVA8 十大新特性详解</a></li>
                         <li class="py-2"><a href="/news/article-24296.htm" title="聊城宠物批发市场（聊城宠物批发市场在哪里）">聊城宠物批发市场（聊城宠物批发市场在哪里）</a></li>
+                        <li class="py-2"><a href="/news/article-37733.htm" title="Java中的DatagramPacket与DatagramSocket的初步">Java中的DatagramPacket与DatagramSocket的初步</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-31-node-share.htm" title="「1月31日」最高速度22.6M/S，2025年Surge每天更新免费节点订阅链接">「1月31日」最高速度22.6M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19493.htm" title="Spring Boot运行原理">Spring Boot运行原理</a></li>
+                        <li class="py-2"><a href="/news/article-46213.htm" title="动物医院实践心得500字作文三年级 动物医院实践心得500字作文三年级下册">动物医院实践心得500字作文三年级 动物医院实践心得500字作文三年级下册</a></li>
+                        <li class="py-2"><a href="/news/article-31448.htm" title="动物疫苗价格排行榜最新图片高清大全 动物疫苗价格排行榜最新图片高清大全集">动物疫苗价格排行榜最新图片高清大全 动物疫苗价格排行榜最新图片高清大全集</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-node-share.htm" title="「11月9日」最高速度18M/S，2024年Surge每天更新免费节点订阅链接">「11月9日」最高速度18M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-48172.htm" title="设置feign配置日志级别">设置feign配置日志级别</a></li>
+                        <li class="py-2"><a href="/news/article-32989.htm" title="动物疫苗经营许可证在哪里办的（动物疫苗经营许可证在哪里办的呢）">动物疫苗经营许可证在哪里办的（动物疫苗经营许可证在哪里办的呢）</a></li>
+                        <li class="py-2"><a href="/news/article-36008.htm" title="沈阳免费领养猫的地方（沈阳免费领养猫的地方电话）">沈阳免费领养猫的地方（沈阳免费领养猫的地方电话）</a></li>
                     </ul>
     </div>
 </div>
@@ -128,16 +156,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
