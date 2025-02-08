@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-52829.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SpringMVC 执行流程</title>
+        <meta name="description" content="SpringMVC 的执行流程    SpringMVC 框架  SpringMVC 是一个基于 Java 的实现了 MVC 设计模式的请求驱动类型的轻量级 Web 框架，通过把 Model，View" />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Surge Node节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://surgenode.github.io/news/article-52829.htm" />
+    <meta property="og:site_name" content="Surge Node节点订阅站" />
+    <meta property="og:title" content="SpringMVC 执行流程" />
+    <meta property="og:image" content="https://surgenode.github.io/uploads/20240723/269f3c71192c4a41690d8144cea9310e.webp" />
+        <meta property="og:release_date" content="2025-02-07T07:20:23" />
+    <meta property="og:updated_time" content="2025-02-07T07:20:23" />
+        <meta property="og:description" content="SpringMVC 的执行流程    SpringMVC 框架  SpringMVC 是一个基于 Java 的实现了 MVC 设计模式的请求驱动类型的轻量级 Web 框架，通过把 Model，View" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringMVC 执行流程">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                <a href="/" class="navbar-brand">
+                                <span>Surge Node</span>
+                                </a>
+            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">SpringMVC 执行流程</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <h2> <a id="SpringMVC__0" rel="nofollow"></a>SpringMVC 的执行流程</h2> <ol> <li> <h5> <a id="SpringMVC__2" rel="nofollow"></a>SpringMVC 框架</h5> <p> SpringMVC 是一个基于 Java 的实现了 MVC 设计模式的请求驱动类型的轻量级 Web 框架，通过把 Model，View，Controller 分离，将 Web 层进行职责解耦，把复杂的 Web 应用分成逻辑清晰的几部分，简化开发，减少出错，方便组内开发人员之间的配合。 简而言之，SpringMVC 就是将我们原来开发在 Servlet 中的代码拆分了，一部分由 SpringMVC 完成，一部分由我们自己完成。</p> </li> <li> <h5> <a id="SpringMVC__6" rel="nofollow"></a>SpringMVC 主要组件</h5> <p>前端控制器 DispatcherServlet：接收请求、响应结果，相当于转发器，有了 DispatcherServlet 就减少了其它组件之间的耦合度。</p> <p>处理器映射器 HandlerMapping：根据请求的 URL 来查找 Handler。</p> <p>处理器适配器 HandlerAdapter：负责执行 Handler。</p> <p>处理器 Handler：处理业务逻辑的 Java 类（我们自己写的 Controller 类）。</p> <p>视图解析器 ViewResolver：进行视图的解析，根据视图逻辑名将 ModelAndView 解析成真正的视图（view） 。</p> <p>视图 View：View 是一个接口， 它的实现类支持不同的视图类型，如 jsp，freemarker， pdf 等。</p> </li> <li> <h5> <a id="SpringMVC__20" rel="nofollow"></a>SpringMVC 的执行流程</h5> </li> </ol> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230113/23e6c09fce140e767f8196ca5f888cae.jpg" alt="SpringMVC 执行流程"></p> <ol> <li>用户发送请求到前端控制器（DispatcherServlet）。</li> <li>前端控制器 （ DispatcherServlet ） 收到请求调用处理器映射器 （HandlerMapping），去查找处理器（Handler）。</li> <li>处理器映射器（HandlerMapping）找到具体的处理器(可以根据 xml 配置、注解进行查找)，生成处理器对象及处理器拦截器(如果有则生成)一并返回给 DispatcherServlet。</li> <li>前端控制器（DispatcherServlet）调用处理器适配器（HandlerAdapter）。</li> <li>处理器适配器（HandlerAdapter）去调用自定义的处理器类（Controller）。</li> <li>自定义的处理器类（Controller）将得到的参数进行处理并返回结果给处理器适配器（HandlerAdapter）。</li> <li>处理器适配器 （ HandlerAdapter ）将得到的结果返回给前端控制器 （DispatcherServlet）。</li> <li>前端控制器（DispatcherServlet ）将 ModelAndView 传给视图解析器 （ViewReslover）。</li> <li>视图解析器（ViewReslover）将得到的参数从逻辑视图转换为物理视图并返回给前端控制器（DispatcherServlet）。</li> <li>前端控制器（DispatcherServlet）调用物理视图进行渲染并返回。</li> <li>前端控制器（DispatcherServlet）将渲染后的结果返回。</li> </ol> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-52302.htm">国内宠物知名品牌（著名宠物品牌）</a></p>
+                                        <p>下一个：<a href="/news/article-52830.htm">Spring Boot Admin 的使用</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-free-node-subscribe.htm" title="「1月9日」最高速度18.6M/S，2025年Surge每天更新免费节点订阅链接">「1月9日」最高速度18.6M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-45226.htm" title="Vue导航栏，基于elementUI的导航菜单树">Vue导航栏，基于elementUI的导航菜单树</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-23-node-share-links.htm" title="「1月23日」最高速度20.9M/S，2025年Surge每天更新免费节点订阅链接">「1月23日」最高速度20.9M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-45227.htm" title="python输出计算结果_Python学习&#8211;02输入和输出、运算符">python输出计算结果_Python学习&#8211;02输入和输出、运算符</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-free-node-subscribe.htm" title="「12月9日」最高速度19.8M/S，2024年Surge每天更新免费节点订阅链接">「12月9日」最高速度19.8M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-6-node-share.htm" title="「1月6日」最高速度18.7M/S，2025年Surge每天更新免费节点订阅链接">「1月6日」最高速度18.7M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-node-share.htm" title="「11月10日」最高速度22.4M/S，2024年Surge每天更新免费节点订阅链接">「11月10日」最高速度22.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-50719.htm" title="哪个牌子的滚筒洗衣机好用耐用呢(哪个牌子的滚筒洗衣机好用又耐用)">哪个牌子的滚筒洗衣机好用耐用呢(哪个牌子的滚筒洗衣机好用又耐用)</a></li>
+                        <li class="py-2"><a href="/news/article-27332.htm" title="ES6基础语法之函数介绍_基础知识">ES6基础语法之函数介绍_基础知识</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-free-subscribe-node.htm" title="「1月13日」最高速度22M/S，2025年Surge每天更新免费节点订阅链接">「1月13日」最高速度22M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
