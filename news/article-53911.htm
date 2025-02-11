@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-53911.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Objects类的equals</title>
+        <meta name="description" content="首先做一个了解，所有类都是Object直接或间接子类，所以才学java的新手应该都知道这一点，所以我们说说继承于根类(也是Object类)的equals和Objects.equals的不同点吧。 接下" />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Surge Node节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://surgenode.github.io/news/article-53911.htm" />
+    <meta property="og:site_name" content="Surge Node节点订阅站" />
+    <meta property="og:title" content="Objects类的equals" />
+    <meta property="og:image" content="https://surgenode.github.io/uploads/20240723/336b55a070f84948b037104ce894dd5e.webp" />
+        <meta property="og:release_date" content="2025-02-09T10:06:18" />
+    <meta property="og:updated_time" content="2025-02-09T10:06:18" />
+        <meta property="og:description" content="首先做一个了解，所有类都是Object直接或间接子类，所以才学java的新手应该都知道这一点，所以我们说说继承于根类(也是Object类)的equals和Objects.equals的不同点吧。 接下" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Objects类的equals">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                <a href="/" class="navbar-brand">
+                                <span>Surge Node</span>
+                                </a>
+            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/client.htm" title="客户端">客户端</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">Objects类的equals</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>首先做一个了解，所有类都是Object直接或间接子类，所以才学java的新手应该都知道这一点，所以我们说说继承于根类(也是Object类)的equals和Objects.equals的不同点吧。<br /> 接下来我们看继承根类的equals方法：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220818/6bdc8f69b1a2fbf2138c8bbda7ef58e5.jpg" alt="Objects类的equals"><img decoding="async" src="http://img.555519.xyz/uploads3/20220818/b229fb12f1922643fc49b9ce04c030bf.jpg" alt="Objects类的equals"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220818/7e4de6fb5febbb54d21a6f0fdaa2d399.jpg" alt="Objects类的equals"><br /> 因为任何类都是直接过间接继承Object类，所以可以理解为自带的equals方法。<br /> 我们接着往下看：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220818/26a3c5f1833381625b00366acd61dfc5.jpg" alt="Objects类的equals"><br /> 下面重点来了！！！！<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220818/3ced80dda275d2d3be13057406e580e5.jpg" alt="Objects类的equals"><br /> 为了解决这个问题，所以有了Object.equals方法????<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220818/e4135dff37dbe437aa1d4813fa71b92d.jpg" alt="Objects类的equals"><br /> 希望对大家有帮助，第一次写文章，手抖天气冷，写的不好体谅写????</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-53910.htm">Spring JDBC-NamedParameterJdbcTemplate模板类</a></p>
+                                        <p>下一个：<a href="/news/article-54459.htm">猫打疫苗和不打疫苗的区别（猫疫苗必须打吗 知乎）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-27795.htm" title="宠物领养协议书范本图片模板大全 宠物领养协议书范本图片模板大全集">宠物领养协议书范本图片模板大全 宠物领养协议书范本图片模板大全集</a></li>
+                        <li class="py-2"><a href="/news/article-39756.htm" title="vue @blur 和 .trim()">vue @blur 和 .trim()</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-node-share-links.htm" title="「1月25日」最高速度20.6M/S，2025年Surge每天更新免费节点订阅链接">「1月25日」最高速度20.6M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-node-share-links.htm" title="「11月17日」最高速度20.9M/S，2024年Surge每天更新免费节点订阅链接">「11月17日」最高速度20.9M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-38777.htm" title="宠物领养数据库设计论文（宠物领养网站的设计与实现）">宠物领养数据库设计论文（宠物领养网站的设计与实现）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-free-node-subscribe-links.htm" title="「12月8日」最高速度22.8M/S，2024年Surge每天更新免费节点订阅链接">「12月8日」最高速度22.8M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-23-node-share-links.htm" title="「1月23日」最高速度20.9M/S，2025年Surge每天更新免费节点订阅链接">「1月23日」最高速度20.9M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20864.htm" title="FP-growth算法以及代码实现">FP-growth算法以及代码实现</a></li>
+                        <li class="py-2"><a href="/news/article-46212.htm" title="动物医疗中心 动物医疗中心和动物医院的区别">动物医疗中心 动物医疗中心和动物医院的区别</a></li>
+                        <li class="py-2"><a href="/news/article-43725.htm" title="Android中EditText光标的显示与隐藏方法">Android中EditText光标的显示与隐藏方法</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">33</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
