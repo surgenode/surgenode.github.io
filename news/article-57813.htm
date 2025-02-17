@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-57813.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>mysql 中count函数的使用方法_MySQL中count函数使用方法详解</title>
+        <meta name="description" content="count(*) 它返回检索行的数目， 不论其是否包含 NULL值。 SELECT 从一个表中检索，而不检索其它的列，并且没有 WHERE子句时， COUNT(*)被优化到最快的返回速度。 例如：SE" />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Surge Node节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://surgenode.github.io/news/article-57813.htm" />
+    <meta property="og:site_name" content="Surge Node节点订阅站" />
+    <meta property="og:title" content="mysql 中count函数的使用方法_MySQL中count函数使用方法详解" />
+    <meta property="og:image" content="https://surgenode.github.io/uploads/20240723/a743971ba0dacdf0c9b23e00ab58c128.webp" />
+        <meta property="og:release_date" content="2025-02-16T07:22:54" />
+    <meta property="og:updated_time" content="2025-02-16T07:22:54" />
+        <meta property="og:description" content="count(*) 它返回检索行的数目， 不论其是否包含 NULL值。 SELECT 从一个表中检索，而不检索其它的列，并且没有 WHERE子句时， COUNT(*)被优化到最快的返回速度。 例如：SE" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="mysql 中count函数的使用方法_MySQL中count函数使用方法详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                <a href="/" class="navbar-brand">
+                                <span>Surge Node</span>
+                                </a>
+            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/client.htm" title="客户端">客户端</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">mysql 中count函数的使用方法_MySQL中count函数使用方法详解</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>count(*) 它返回检索行的数目， 不论其是否包含 NULL值。</p> <p>SELECT 从一个表中检索，而不检索其它的列，并且没有 WHERE子句时， COUNT(*)被优化到最快的返回速度。</p> <p>例如：SELECT COUNT(*) FROM student;</p> <p>COUNT(DISTINCT 字段)，返回不同的非NULL值数目；若找不到匹配的项，则COUNT(DISTINCT)返回 0 。</p> <p>这个优化仅适用于 MyISAM表, 原因是这些表类型会储存一个函数返回记录的精确数量，而且非常容易访问。</p> <p>对于事务型的存储引擎(InnoDB, BDB), 存储一个精确行数的问题比较多，原因是可能会发生多重事物处理,</p> <p>而每个都可能会对行数产生影响。</p> <p>例，创建用于测试的数据表，以进行count数据统计：</p> <p>代码如下</p> <p>复制代码</p> <p>CREATE TABLE `user` (</p> <p>`id` int(5) unsigned NOT NULL AUTO_INCREMENT,</p> <p>`name` varchar(10) DEFAULT NULL,</p> <p>`password` varchar(10) DEFAULT NULL,</p> <p>PRIMARY KEY (`id`)</p> <p>) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1</p> <p>测试数据为：</p> <p>1 name1 123456</p> <p>2 name2 123456</p> <p>3 name3 123456</p> <p>4 name4&nbsp; NULL</p> <p>请注意以下查询的返回结果：</p> <p>代码如下</p> <p>复制代码</p> <p>1，select&nbsp;count(*) from `user`</p> <p>2，select count(name) from `user`</p> <p>3，select count(password) from `user`</p> <p>输出结果：4,4,3</p> <p>原因分析：</p> <p>1，count(*)是对行数目进行计数，所以结果为4。</p> <p>2，count(column_name)是对列中不为空的行进行计数，所以count(name)=4，而count(password)=3。</p> <p>以上二点，在使用count函数时，要注意下。</p> <p>使用GROUP BY对每个owner的所有记录分组，没有它，你会得到错误消息：</p> <p>代码如下</p> <p>复制代码</p> <p>mysql&gt; SELECT owner, COUNT(*) FROM pet;</p> <p>ERROR 1140 (42000): Mixing of GROUP columns (MIN(),MAX(),COUNT(),...)</p> <p>with no GROUP columns is illegal if there is no GROUP BY clause</p> <p>COUNT( )和GROUP BY以各种方式分类你的数据。下列例子显示出进行动物普查操作的不同方式。</p> <p>每种动物的数量：</p> <p>代码如下</p> <p>复制代码</p> <p>mysql&gt; SELECT species, COUNT(*) FROM pet GROUP BY species;</p> <p>+---------+----------+</p> <p>| species | COUNT(*) |</p> <p>+---------+----------+</p> <p>| bird&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 |</p> <p>| cat&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 |</p> <p>| dog&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 |</p> <p>| hamster |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| snake&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>+---------+----------+</p> <p>每种性别的动物数量：</p> <p>代码如下</p> <p>复制代码</p> <p>mysql&gt; SELECT sex, COUNT(*) FROM pet GROUP BY sex;</p> <p>+------+----------+</p> <p>| sex&nbsp; | COUNT(*) |</p> <p>+------+----------+</p> <p>| NULL |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| f&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 |</p> <p>| m&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 |</p> <p>+------+----------+</p> <p>(在这个输 出中，NULL表示“未知性别”。)</p> <p>按种类和性别组合的动物数量：</p> <p>代码如下</p> <p>复制代码</p> <p>mysql&gt; SELECT species, sex, COUNT(*) FROM pet GROUP BY species, sex;</p> <p>+---------+------+----------+</p> <p>| species | sex&nbsp; | COUNT(*) |</p> <p>+---------+------+----------+</p> <p>| bird&nbsp;&nbsp;&nbsp; | NULL |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| bird&nbsp;&nbsp;&nbsp; | f&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| cat&nbsp;&nbsp;&nbsp;&nbsp; | f&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| cat&nbsp;&nbsp;&nbsp;&nbsp; | m&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| dog&nbsp;&nbsp;&nbsp;&nbsp; | f&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| dog&nbsp;&nbsp;&nbsp;&nbsp; | m&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 |</p> <p>| hamster | f&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| snake&nbsp;&nbsp; | m&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>+---------+------+----------+</p> <p>若 使用COUNT( )，你不必检索整个表。例如, 前面的查询，当只对狗和猫进行时，应为：</p> <p>代码如下</p> <p>复制代码</p> <p>mysql&gt; SELECT species, sex, COUNT(*) FROM pet</p> <p>-&gt; WHERE species = 'dog' OR species = 'cat'</p> <p>-&gt; GROUP BY species, sex;</p> <p>+---------+------+----------+</p> <p>| species | sex&nbsp; | COUNT(*) |</p> <p>+---------+------+----------+</p> <p>| cat&nbsp;&nbsp;&nbsp;&nbsp; | f&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| cat&nbsp;&nbsp;&nbsp;&nbsp; | m&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| dog&nbsp;&nbsp;&nbsp;&nbsp; | f&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| dog&nbsp;&nbsp;&nbsp;&nbsp; | m&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 |</p> <p>+---------+------+----------+</p> <p>或， 如果你仅需要知道已知性别的按性别的动物数目：</p> <p>代码如下</p> <p>复制代码</p> <p>mysql&gt; SELECT species, sex, COUNT(*) FROM pet</p> <p>-&gt; WHERE sex IS NOT NULL</p> <p>-&gt; GROUP BY species, sex;</p> <p>+---------+------+----------+</p> <p>| species | sex&nbsp; | COUNT(*) |</p> <p>+---------+------+----------+</p> <p>| bird&nbsp;&nbsp;&nbsp; | f&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| cat&nbsp;&nbsp;&nbsp;&nbsp; | f&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| cat&nbsp;&nbsp;&nbsp;&nbsp; | m&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| dog&nbsp;&nbsp;&nbsp;&nbsp; | f&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| dog&nbsp;&nbsp;&nbsp;&nbsp; | m&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 |</p> <p>| hamster | f&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>| snake&nbsp;&nbsp; | m&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 |</p> <p>+---------+------+----------+</p> <p>顺便提下mysql的DISTINCT的关键字有很多你想不到的用处</p> <p>1.在count 不重复的记录的时候能用到</p> <p>比如SELECT COUNT( DISTINCT id ) FROM tablename;</p> <p>就是计算talbebname表中id不同的记录有多少条</p> <p>2,在需要返回记录不同的id的具体值的时候可以用</p> <p>比如SELECT DISTINCT id FROM tablename;</p> <p>返回talbebname表中不同的id的具体的值</p> <p>3.上面的情况2对于需要返回mysql表中2列以上的结果时会有歧义</p> <p>比如SELECT DISTINCT id, type FROM tablename;</p> <p>实际上返回的是 id与type同时不相同的结果,也就是DISTINCT同时作用了两个字段，必须得id与tyoe都相同的才被排除了,与我们期望的结果不一样</p> <p>4.这时候可以考虑使用group_concat函数来进行排除,不过这个mysql函数是在mysql4.1以上才支持的</p> <p>5.其实还有另外一种解决方式,就是使用</p> <p>SELECT id, type, count(DISTINCT id) FROM tablename</p> <p>虽然这样的返回结果多了一列无用的count数据(或许你就需要这个我说的无用数据)</p> <p>返回的结果是 只有id不同的所有结果和上面的4类型可以互补使用,就是看你需要什么样的数据了</p> </div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-57242.htm">动物疫苗的使用方法及注意事项视频教程大全（动物疫苗知识）</a></p>
+                                        <p>下一个：<a href="/news/article-57814.htm">动物疫苗价格查询表图片及价格大全图（动物疫苗接种时间表）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-53368.htm" title="深圳宠物领养中心官网招聘（深圳市宠物领养之家官网）">深圳宠物领养中心官网招聘（深圳市宠物领养之家官网）</a></li>
+                        <li class="py-2"><a href="/news/article-29930.htm" title=".NET Core(.NET6)中gRPC注册到Consul详解">.NET Core(.NET6)中gRPC注册到Consul详解</a></li>
+                        <li class="py-2"><a href="/news/article-34420.htm" title="免费宠物领养平台有哪些软件可以用的（宠物领养软件推荐）">免费宠物领养平台有哪些软件可以用的（宠物领养软件推荐）</a></li>
+                        <li class="py-2"><a href="/news/article-41244.htm" title="猫三联最晚什么时候打第一针（猫三联最晚什么时候打第一针疫苗）">猫三联最晚什么时候打第一针（猫三联最晚什么时候打第一针疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-38776.htm" title="JavaCPP快速入门(官方demo增强版)">JavaCPP快速入门(官方demo增强版)</a></li>
+                        <li class="py-2"><a href="/news/article-18821.htm" title="java js 二级联动下拉列表_JS实现下拉列表的二级联动">java js 二级联动下拉列表_JS实现下拉列表的二级联动</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-15-node-share-links.htm" title="「11月15日」最高速度19.7M/S，2024年Surge每天更新免费节点订阅链接">「11月15日」最高速度19.7M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-21-node-share.htm" title="「11月21日」最高速度20.4M/S，2024年Surge每天更新免费节点订阅链接">「11月21日」最高速度20.4M/S，2024年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-48515.htm" title="动物医院介绍资料 动物医院介绍资料大全">动物医院介绍资料 动物医院介绍资料大全</a></li>
+                        <li class="py-2"><a href="/news/article-51217.htm" title="广州领养猫咪正规机构（广州领养猫咪中心）">广州领养猫咪正规机构（广州领养猫咪中心）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
