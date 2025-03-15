@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-73924.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>spring boot 整合 druid 监控界面</title>
+        <meta name="description" content="上篇文章说了，使用mysql 配置慢日志来截获 查询较慢的SQL 进行优化，这篇就讲一下使用开源的工具druid 来实现具体的效果 druid 是阿里的数据库连接管理工具类，今天使用spring Bo" />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Surge Node节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://surgenode.github.io/news/article-73924.htm" />
+    <meta property="og:site_name" content="Surge Node节点订阅站" />
+    <meta property="og:title" content="spring boot 整合 druid 监控界面" />
+    <meta property="og:image" content="https://surgenode.github.io/uploads/20240723/127e801a1995043e1ce29eb4bcee4237.webp" />
+        <meta property="og:release_date" content="2025-03-14T07:07:22" />
+    <meta property="og:updated_time" content="2025-03-14T07:07:22" />
+        <meta property="og:description" content="上篇文章说了，使用mysql 配置慢日志来截获 查询较慢的SQL 进行优化，这篇就讲一下使用开源的工具druid 来实现具体的效果 druid 是阿里的数据库连接管理工具类，今天使用spring Bo" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="spring boot 整合 druid 监控界面">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                <a href="/" class="navbar-brand">
+                                <span>Surge Node</span>
+                                </a>
+            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/client.htm" title="客户端">客户端</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">spring boot 整合 druid 监控界面</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221230/1852684ad02e555f5b035bf539cd098d.jpg" alt="spring boot 整合 druid 监控界面"><br /> 上篇文章说了，使用mysql 配置慢日志来截获 查询较慢的SQL 进行优化，这篇就讲一下使用开源的工具druid 来实现具体的效果<br /> druid 是阿里的数据库连接管理工具类，今天使用spring Boot 与之整合，具体代码如下：<br /> 引入依赖：</p> <pre><code class="prism language-c">   <span class="token operator">&lt;</span>dependency<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>groupId<span class="token operator">&gt;</span>com<span class="token punctuation">.</span>alibaba<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>artifactId<span class="token operator">&gt;</span>druid<span class="token operator">-</span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>version<span class="token operator">&gt;</span><span class="token number">1.1</span><span class="token number">.9</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">&gt;</span>         <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span> </code></pre> <p>配置文件：</p> <pre><code class="prism language-c">spring<span class="token punctuation">:</span>   datasource<span class="token punctuation">:</span>     type<span class="token punctuation">:</span> com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>pool<span class="token punctuation">.</span>DruidDataSource     driverClassName<span class="token punctuation">:</span> com<span class="token punctuation">.</span>mysql<span class="token punctuation">.</span>cj<span class="token punctuation">.</span>jdbc<span class="token punctuation">.</span>Driver     url<span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">192.168</span><span class="token number">.92</span><span class="token number">.11</span><span class="token punctuation">:</span><span class="token number">3306</span><span class="token operator">/</span>test<span class="token operator">?</span>useUnicode<span class="token operator">=</span>true<span class="token operator">&amp;</span>characterEncoding<span class="token operator">=</span>UTF<span class="token operator">-</span><span class="token number">8</span><span class="token operator">&amp;</span>useSSL<span class="token operator">=</span>false<span class="token operator">&amp;</span>serverTimezone<span class="token operator">=</span>Asia<span class="token operator">/</span>Shanghai     username<span class="token punctuation">:</span> root     password<span class="token punctuation">:</span> <span class="token number">123456</span>     initialSize<span class="token punctuation">:</span> <span class="token number">5</span>     minIdle<span class="token punctuation">:</span> <span class="token number">3</span>     maxActive<span class="token punctuation">:</span> <span class="token number">20</span>     maxWait<span class="token punctuation">:</span> <span class="token number">60000</span>     timeBetweenEvictionRunsMillis<span class="token punctuation">:</span> <span class="token number">60000</span>     minEvictableIdleTimeMillis<span class="token punctuation">:</span> <span class="token number">30000</span>     validationQuery<span class="token punctuation">:</span> select <span class="token string">'x'</span>     testWhileIdle<span class="token punctuation">:</span> true     testOnBorrow<span class="token punctuation">:</span> false     testOnReturn<span class="token punctuation">:</span> false     poolPreparedStatements<span class="token punctuation">:</span> true     maxPoolPreparedStatementPerConnectionSize<span class="token punctuation">:</span> <span class="token number">20</span>     filters<span class="token punctuation">:</span> stat<span class="token punctuation">,</span>wall<span class="token punctuation">,</span>slf4j     connectionProperties<span class="token punctuation">:</span> druid<span class="token punctuation">.</span>stat<span class="token punctuation">.</span>mergeSql<span class="token operator">=</span>true<span class="token punctuation">;</span>druid<span class="token punctuation">.</span>stat<span class="token punctuation">.</span>slowSqlMillis<span class="token operator">=</span><span class="token number">5000</span> </code></pre> <p>参数说明</p> <pre><code class="prism language-bash">- spring.datasource.druid.max-active 最大连接数 - spring.datasource.druid.initial-size 初始化大小 - spring.datasource.druid.min-idle 最小连接数 - spring.datasource.druid.max-wait 获取连接等待超时时间 - spring.datasource.druid.time-between-eviction-runs-millis 间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 - spring.datasource.druid.min-evictable-idle-time-millis 一个连接在池中最小生存的时间，单位是毫秒 - spring.datasource.druid.filters<span class="token operator">=</span>config,stat,wall,log4j 配置监控统计拦截的filters，去掉后监控界面SQL无法进行统计，’wall’用于防火墙 </code></pre> <p>配置Druid相关的Servlet和Filter</p> <pre><code class="prism language-c">package com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>druid_test<span class="token punctuation">.</span>filter<span class="token punctuation">;</span>  import com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>support<span class="token punctuation">.</span>http<span class="token punctuation">.</span>WebStatFilter<span class="token punctuation">;</span>  import javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebFilter<span class="token punctuation">;</span> import javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebInitParam<span class="token punctuation">;</span>  @<span class="token function">WebFilter</span><span class="token punctuation">(</span>filterName<span class="token operator">=</span><span class="token string">"druidWebStatFilter"</span><span class="token punctuation">,</span>urlPatterns<span class="token operator">=</span><span class="token string">"/*"</span><span class="token punctuation">,</span>         initParams<span class="token operator">=</span><span class="token punctuation">{<!-- --></span>                 @<span class="token function">WebInitParam</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"exclusions"</span><span class="token punctuation">,</span>value<span class="token operator">=</span><span class="token string">"*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"</span><span class="token punctuation">)</span><span class="token comment">//忽略资源</span>         <span class="token punctuation">}</span> <span class="token punctuation">)</span> public class DruidStatFilter extends WebStatFilter <span class="token punctuation">{<!-- --></span> <span class="token punctuation">}</span>  </code></pre> <pre><code class="prism language-c">import com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>support<span class="token punctuation">.</span>http<span class="token punctuation">.</span>StatViewServlet<span class="token punctuation">;</span>  import javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebInitParam<span class="token punctuation">;</span> import javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebServlet<span class="token punctuation">;</span>  @<span class="token function">WebServlet</span><span class="token punctuation">(</span>urlPatterns<span class="token operator">=</span><span class="token string">"/druid/*"</span><span class="token punctuation">,</span>         initParams<span class="token operator">=</span><span class="token punctuation">{<!-- --></span>                 @<span class="token function">WebInitParam</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"allow"</span><span class="token punctuation">,</span>value<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token comment">// IP白名单(没有配置或者为空，则允许所有访问)</span>                 <span class="token comment">/* @WebInitParam(name="deny",value="192.168.188.130"),*/</span><span class="token comment">// IP黑名单 (存在共同时，deny优先于allow)</span>                 @<span class="token function">WebInitParam</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"loginUsername"</span><span class="token punctuation">,</span>value<span class="token operator">=</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token comment">// 用户名</span>                 @<span class="token function">WebInitParam</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"loginPassword"</span><span class="token punctuation">,</span>value<span class="token operator">=</span><span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token comment">// 密码</span>                 @<span class="token function">WebInitParam</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"resetEnable"</span><span class="token punctuation">,</span>value<span class="token operator">=</span><span class="token string">"false"</span><span class="token punctuation">)</span><span class="token comment">// 禁用HTML页面上的“Reset All”功能</span>         <span class="token punctuation">}</span><span class="token punctuation">)</span> public class DruidStatViewServlet extends StatViewServlet <span class="token punctuation">{<!-- --></span> <span class="token punctuation">}</span> </code></pre> <p>启动类要增加这个注解：@ServletComponentScan<img decoding="async" src="http://img.555519.xyz/uploads/20221230/62901ad92bc2eef83e441565c804fdc2.jpg" alt="spring boot 整合 druid 监控界面"><br /> 然后访问</p> <pre><code class="prism language-c">http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token punctuation">:</span><span class="token number">8080</span><span class="token operator">/</span>druid<span class="token operator">/</span>sql<span class="token punctuation">.</span>html </code></pre> <p>这里可以读取到执行时间慢的SQL<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/58160eef4771ed2b113e19d00c4e5d60.jpg" alt="spring boot 整合 druid 监控界面"><br /> 这个是我们具体的连接配置信息：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/1d3524564d39078a94228e293bd48e43.jpg" alt="spring boot 整合 druid 监控界面"><br /> 后面还有sessin,Spring ，SQL防火墙， 有兴趣的可以了解一下，这里就不做延伸了</p> <p>然后我执行我本地的一个方法,执行完以后就可以看到已经能够查出来具体的SQL了<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/a176bc6b37cc451694c4780cfc16bfcf.jpg" alt="spring boot 整合 druid 监控界面"><br /> 可以点击进去看具体的SQL<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/c2541436842875277b03f6425ef79489.jpg" alt="spring boot 整合 druid 监控界面"><br /> 如果使用的是Spring mvc的话可以借鉴这位大神的博客<br /> https://blog.csdn.net/u010391342/article/details/80606482<br /> 这个我还没有尝试</p> <p>写在最后，在互联网项目中如果没有较好的监控工具，其实使用这个也蛮不错的，可以算是项目中的亮点，实现起来也比较简单</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-73257.htm">天津宠物领养中心地址电话 天津宠物领养中心地址电话号码</a></p>
+                                        <p>下一个：<a href="/news/article-73925.htm">动物疫苗打到人身上有事吗视频教程全集（动物打疫苗有什么作用）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-36813.htm" title="女装品牌哪个比较好(女装 品牌 推荐)">女装品牌哪个比较好(女装 品牌 推荐)</a></li>
+                        <li class="py-2"><a href="/news/article-73257.htm" title="天津宠物领养中心地址电话 天津宠物领养中心地址电话号码">天津宠物领养中心地址电话 天津宠物领养中心地址电话号码</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-3-free-node-subscribe.htm" title="「3月3日」最高速度22.5M/S，2025年Surge每天更新免费节点订阅链接">「3月3日」最高速度22.5M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-41740.htm" title="动物疫苗属于兽药吗知乎文章内容（给动物注射疫苗属于）">动物疫苗属于兽药吗知乎文章内容（给动物注射疫苗属于）</a></li>
+                        <li class="py-2"><a href="/news/article-66751.htm" title="合肥宠物领养救助站在哪里啊（合肥宠物领养合肥宠物赠送）">合肥宠物领养救助站在哪里啊（合肥宠物领养合肥宠物赠送）</a></li>
+                        <li class="py-2"><a href="/news/article-73925.htm" title="动物疫苗打到人身上有事吗视频教程全集（动物打疫苗有什么作用）">动物疫苗打到人身上有事吗视频教程全集（动物打疫苗有什么作用）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-12-node-share.htm" title="「2月12日」最高速度19.6M/S，2025年Surge每天更新免费节点订阅链接">「2月12日」最高速度19.6M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-44729.htm" title="被猫抓不用***的图片（孩子10几天后才说被猫咬了）">被猫抓不用***的图片（孩子10几天后才说被猫咬了）</a></li>
+                        <li class="py-2"><a href="/news/article-41245.htm" title="附近免费领养狗边牧（附近免费领养狗边牧的地方）">附近免费领养狗边牧（附近免费领养狗边牧的地方）</a></li>
+                        <li class="py-2"><a href="/news/article-51770.htm" title="动物疫苗未冷藏几小时失效了 动物疫苗未冷藏几小时失效了怎么办">动物疫苗未冷藏几小时失效了 动物疫苗未冷藏几小时失效了怎么办</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
