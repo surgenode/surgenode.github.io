@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-75266.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>详解如何在Flutter中获取设备标识符_Android_</title>
+        <meta name="description" content="目录  使用 platform_device_id  应用预览 代码  使用 device_info_plus  应用预览 代码  结论    本文将引导您完成 2 个示例，演示如何在 Flutter" />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Surge Node节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://surgenode.github.io/news/article-75266.htm" />
+    <meta property="og:site_name" content="Surge Node节点订阅站" />
+    <meta property="og:title" content="详解如何在Flutter中获取设备标识符_Android_" />
+    <meta property="og:image" content="https://surgenode.github.io/uploads/20240723/562cc8d1c0dd29205ea824672399b98b.webp" />
+        <meta property="og:release_date" content="2025-03-16T10:30:42" />
+    <meta property="og:updated_time" content="2025-03-16T10:30:42" />
+        <meta property="og:description" content="目录  使用 platform_device_id  应用预览 代码  使用 device_info_plus  应用预览 代码  结论    本文将引导您完成 2 个示例，演示如何在 Flutter" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="详解如何在Flutter中获取设备标识符_Android_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                <a href="/" class="navbar-brand">
+                                <span>Surge Node</span>
+                                </a>
+            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/client.htm" title="客户端">客户端</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">详解如何在Flutter中获取设备标识符_Android_</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">使用 platform_device_id</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow">应用预览</a></li> <li><a href="#_lab2_0_1" rel="nofollow">代码</a></li> </ul> <li><a href="#_label1" rel="nofollow">使用 device_info_plus</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_2" rel="nofollow">应用预览</a></li> <li><a href="#_lab2_1_3" rel="nofollow">代码</a></li> </ul> <li><a href="#_label2" rel="nofollow">结论</a></li> <ul class="second_class_ul"></ul> </ul> </div> <p>本文将引导您完成 2 个示例，演示如何在 Flutter 中获取设备标识符</p> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>使用 platform_device_id</h2> <p>如果您只需要运行应用程序的设备的 id，<strong>最简单快捷的解决方案</strong>是使用<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://pub.dev/packages/platform_device_id"   target="_blank" rel="nofollow">platform_device_id</a>包。它适用于 Android (AndroidId)、iOS (IdentifierForVendor)、Windows (BIOS UUID)、macOS (IOPlatformUUID) 和 Linux (BIOS UUID)。在 Flutter Web 应用程序中，您将获得 UserAgent（此信息不是唯一的）。</p> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <p class="maodian"><a name="_lab2_1_2" rel="nofollow"></a></p> <h3>应用预览</h3> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220412/6b18fac8d0d3c1d1a09039b5e189998f.jpg"></p> <p>我们要构建的示例应用程序包含一个浮动按钮。按下此按钮时，设备的 ID 将显示在屏幕上。以下是它在 iOS 和 Android 上的工作方式：</p> <p class="maodian"><a name="_lab2_0_1" rel="nofollow"></a></p> <p class="maodian"><a name="_lab2_1_3" rel="nofollow"></a></p> <h3>代码</h3> <p>1.通过运行安装插件：</p> <div class="ay1code"> <pre class="brush:java;">flutter pub add platform_device_id</pre> </div> <p>然后执行这个命令：</p> <div class="ay1code"> <pre class="brush:java;">flutter pub get</pre> </div> <p>不需要特殊权限或配置。</p> <p>2.完整代码：</p> <div class="ay1code"> <pre class="brush:java;">// main.dart  import 'package:flutter/material.dart';  import 'package:platform_device_id/platform_device_id.dart';  ​  void main() {    runApp(const MyApp());  }  ​  class MyApp extends StatelessWidget {    const MyApp({Key? key}) : super(key: key);    @override    Widget build(BuildContext context) {      return MaterialApp(          // Remove the debug banner          debugShowCheckedModeBanner: false,          title: '大前端之旅',          theme: ThemeData(            primarySwatch: Colors.indigo,          ),          home: const HomePage());    }  }  ​  class HomePage extends StatefulWidget {    const HomePage({Key? key}) : super(key: key);  ​    @override    _HomePageState createState() =&gt; _HomePageState();  }  ​  class _HomePageState extends State&lt;HomePage&gt; {    String? _id;  ​    // This function will be called when the floating button is pressed    void _getInfo() async {      // Get device id      String? result = await PlatformDeviceId.getDeviceId;  ​      // Update the UI      setState(() {        _id = result;      });    }  ​    @override    Widget build(BuildContext context) {      return Scaffold(        appBar: AppBar(title: const Text('大前端之旅')),        body: Padding(          padding: const EdgeInsets.all(20),          child: Center(              child: Text(            _id ?? 'Press the button',            style: TextStyle(fontSize: 20, color: Colors.red.shade900),          )),        ),        floatingActionButton: FloatingActionButton(            onPressed: _getInfo, child: const Icon(Icons.play_arrow)),      );    }  }</pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>使用 device_info_plus</h2> <p>包<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://pub.dev/packages/device_info_plus"   target="_blank" rel="nofollow">device_info_plus</a>为您提供作为 platform_device_id 的设备 ID，并提供有关设备的其他详细信息（品牌、型号等）以及 Flutter 应用运行的 Android 或 iOS 版本。</p> <h3>应用预览</h3> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220412/409c1100c176f02cf7f1e8f45ddcb080.jpg"></p> <p>我们将制作的应用程序与上一个示例中的应用程序非常相似。但是，这一次我们将在屏幕上显示大量文本。返回的结果因平台而异。如您所见，Android 上返回的信息量远远超过 iOS。</p> <h3>代码</h3> <p>1. 通过执行以下操作安装插件：</p> <div class="ay1code"> <pre class="brush:java;">flutter pub add device_info_plus</pre> </div> <p>然后运行：</p> <div class="ay1code"> <pre class="brush:java;">flutter pub get</pre> </div> <p>2. <strong>main.dart</strong>中的完整源代码：</p> <div class="ay1code"> <pre class="brush:java;">// main.dart  import 'package:flutter/material.dart';  import 'package:device_info_plus/device_info_plus.dart';  ​  void main() {    runApp(const MyApp());  }  ​  class MyApp extends StatelessWidget {    const MyApp({Key? key}) : super(key: key);    @override    Widget build(BuildContext context) {      return MaterialApp(          // Remove the debug banner          debugShowCheckedModeBanner: false,          title: '大前端之旅',          theme: ThemeData(            primarySwatch: Colors.amber,          ),          home: const HomePage());    }  }  ​  class HomePage extends StatefulWidget {    const HomePage({Key? key}) : super(key: key);  ​    @override    _HomePageState createState() =&gt; _HomePageState();  }  ​  class _HomePageState extends State&lt;HomePage&gt; {    Map? _info;  ​    // This function is triggered when the floating button gets pressed    void _getInfo() async {      // Instantiating the plugin      final deviceInfoPlugin = DeviceInfoPlugin();  ​      final result = await deviceInfoPlugin.deviceInfo;      setState(() {        _info = result.toMap();      });    }  ​    @override    Widget build(BuildContext context) {      return Scaffold(        appBar: AppBar(title: const Text('大前端之旅')),        body: _info != null            ? Padding(                padding: const EdgeInsets.all(20),                child: ListView(                  children: _info!.entries                      .map((e) =&gt; Wrap(                            children: [                              Text(                                "${e.key} :",                                style: const TextStyle(                                    fontSize: 18, color: Colors.red),                              ),                              const SizedBox(                                width: 15,                              ),                              Text(                                e.value.toString(),                                style: const TextStyle(                                  fontSize: 18,                                ),                              )                            ],                          ))                      .toList(),                ),              )            : const Center(                child: Text('Press the button'),              ),        floatingActionButton: FloatingActionButton(          onPressed: _getInfo,          child: const Icon(Icons.info),        ),      );    }  }</pre> </div> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>结论</h2> <p>我们已经介绍了几种读取设备信息的技术。选择一个适合您在项目中实施的需求。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-75264.htm">浅谈分布式一致性协议之3PC</a></p>
+                                        <p>下一个：<a href="/news/article-75949.htm">饲料加工加盟（饲料加工加盟费多少）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-36812.htm" title="动物医学研究疫苗（动物医学研究疫苗吗）">动物医学研究疫苗（动物医学研究疫苗吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-free-node-subscribe.htm" title="「3月18日」最高速度19.7M/S，2025年Surge每天更新免费节点订阅链接">「3月18日」最高速度19.7M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-node-share-links.htm" title="「3月10日」最高速度20.6M/S，2025年Surge每天更新免费节点订阅链接">「3月10日」最高速度20.6M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-node-share-links.htm" title="「3月11日」最高速度19.9M/S，2025年Surge每天更新免费节点订阅链接">「3月11日」最高速度19.9M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-21-free-subscribe-node.htm" title="「1月21日」最高速度22.9M/S，2025年Surge每天更新免费节点订阅链接">「1月21日」最高速度22.9M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-15-node-share.htm" title="「3月15日」最高速度18.5M/S，2025年Surge每天更新免费节点订阅链接">「3月15日」最高速度18.5M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-node-share.htm" title="「1月27日」最高速度18.8M/S，2025年Surge每天更新免费节点订阅链接">「1月27日」最高速度18.8M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-54459.htm" title="猫打疫苗和不打疫苗的区别（猫疫苗必须打吗 知乎）">猫打疫苗和不打疫苗的区别（猫疫苗必须打吗 知乎）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-31-node-share.htm" title="「1月31日」最高速度22.6M/S，2025年Surge每天更新免费节点订阅链接">「1月31日」最高速度22.6M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-node-share.htm" title="「3月4日」最高速度19M/S，2025年Surge每天更新免费节点订阅链接">「3月4日」最高速度19M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
