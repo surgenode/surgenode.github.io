@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-86440.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Docker最常用的镜像命令和容器命令</title>
+        <meta name="description" content="官方文档：https://docs.docker.com/referenc 1.1查看镜像 [root@localhost ~]# docker images REPOSITORY    TAG   " />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Surge Node节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://surgenode.github.io/news/article-86440.htm" />
+    <meta property="og:site_name" content="Surge Node节点订阅站" />
+    <meta property="og:title" content="Docker最常用的镜像命令和容器命令" />
+    <meta property="og:image" content="https://surgenode.github.io/uploads/20240723/a743971ba0dacdf0c9b23e00ab58c128.webp" />
+        <meta property="og:release_date" content="2025-04-01T09:50:45" />
+    <meta property="og:updated_time" content="2025-04-01T09:50:45" />
+        <meta property="og:description" content="官方文档：https://docs.docker.com/referenc 1.1查看镜像 [root@localhost ~]# docker images REPOSITORY    TAG   " />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Docker最常用的镜像命令和容器命令">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                <a href="/" class="navbar-brand">
+                                <span>Surge Node</span>
+                                </a>
+            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/client.htm" title="客户端">客户端</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">Docker最常用的镜像命令和容器命令</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				</h1> <p>官方文档：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.docker.com/referenc"  target="_blank" rel="nofollow">https://docs.docker.com/referenc</a></p> <h2 id="11查看镜像">1.1查看镜像</h2> <pre><code class="language-sh">[root@localhost ~]# docker images REPOSITORY    TAG                IMAGE ID       CREATED         SIZE hello-world   latest             feb5d9fea6a5   6 months ago    13.3kB mysql         5.7                8cf625070931   8 months ago    448MB rabbitmq      3.8.3-management   867da7fcdf92   22 months ago   181MB</code></pre> <ul> <li>REPOSITORY：镜像在仓库中的名称</li> <li>TAG：镜像标签</li> <li>IMAGE ID：镜像ID</li> <li>CREATED：镜像创建日期（不是获取该镜像的日期）</li> <li>SIZE：镜像大小</li> </ul> <p>这些镜像都是存储在 Docker 宿主机的<code>var/lib/docker</code> 目录下的。</p> <h2 id="12搜索镜像">1.2搜索镜像</h2> <p>当需要从网络中找出需要的镜像，就可以通过以下命令搜索。</p> <pre><code class="language-sh">docker search 镜像名称</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/3a31e1f9454f0fd176d8a2fae0e03f58.jpg" alt="Docker最常用的镜像命令和容器命令"></p> <ul> <li>NAME：镜像名称</li> <li>DESCRIPTION：镜像描述</li> <li>STARS：用户评价（受欢迎的程度）</li> <li>OFFICIAL：是否为官方构建</li> <li>AUTOMATED：自动构建，表示该镜像是由 Docker Hub 自动构建流程创建的</li> </ul> <h2 id="13拉取镜像">1.3拉取镜像</h2> <p>拉取镜像就是从中央仓管总下载镜像到本地</p> <pre><code class="language-sh">docker pull 镜像名称</code></pre> <p>例如拉取 CentOS 镜像到本地，如果不声明 Tag 镜像标签信息则默认拉取 Latest 版本，也可以通过：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://hub.docker.com"  target="_blank" rel="nofollow">https://hub.docker.com</a> 搜索该镜像，查看支持的 Tag 信息。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b41322327cf8a4d5e0282c0ca4819088.jpg" alt="Docker最常用的镜像命令和容器命令"></p> <p>通过 Tag 信息，下载centos7 的镜像。</p> <pre><code class="language-sh">docker pull centos:7</code></pre> <h2 id="14删除镜像">1.4删除镜像</h2> <p>按镜像 ID 删除镜像</p> <pre><code class="language-sh"># 删除单个镜像 docker rmi 镜像ID  # 删除多个镜像 docker rmi 镜像ID 镜像ID 镜像ID</code></pre> <p><code>docker images -q</code> 可以查询到所有镜像的 ID，通过组合命令可以实现删除所有镜像的操作。</p> <pre><code class="language-sh">docker rmi `docker images -q`</code></pre> <blockquote> <p>注意：如果通过了某个镜像创建了容器，则该镜像无法删除。</p> <p>解决办法：先删除镜像中的容器，在删除该镜像。</p> </blockquote> </h1> <h2 id="21查看容器">2.1查看容器</h2> <p>查看正在运行的容器</p> <pre><code class="language-sh">[root@localhost ~]# docker ps CONTAINER ID   IMAGE      COMMAND       CREATED         STATUS         PORTS     NAMES fdda4b253da0   centos:7   "/bin/bash"   3 seconds ago   Up 2 seconds             centos</code></pre> <ul> <li>CONTAINER ID：容器ID</li> <li>IMAGE：所属容器</li> <li>CREATED：创建时间</li> <li>STATUS：容器状态</li> <li>PORTS：端口</li> <li>NAMES：容器名称</li> </ul> <p>查看停止的容器</p> <pre><code class="language-sh">docker ps -f startus=exited</code></pre> <p>查看所有容器（包括运行和停止）</p> <pre><code class="language-sh">docker ps -a</code></pre> <p>查看最后一次运行的容器</p> <pre><code>docker ps -l</code></pre> <p>列出最近创建的 n 个容器</p> <pre><code>docker ps -n 3</code></pre> <h2 id="22创建与启动容器">2.2创建与启动容器</h2> <pre><code class="language-sh">docker run [OPTIONS] image [COMMAND] [ARG...]</code></pre> <ul> <li><code>-i</code>：表示运行容器；</li> <li><code>-t</code>：表示容器启动后会进入其命令行，也就是创建容器后就能登录进去；</li> <li><code>--name</code>：为创建的容器命名；</li> <li><code>-v</code>：表示目录映射关系（前者是宿主机目录，后者是映射到宿主机的目录）可以用多个<code>-v</code>做多个目录映射；</li> <li><code>-d</code>：创建一个守护式容器在后台运行，不会自动登录容器；</li> <li><code>-p</code>：表示端口映射，前者是宿主机端口，后者是容器内的映射端口，可以使用多个<code>-p</code>做多端口映射；</li> <li><code>-P</code>：随机使用宿主机的可用端口与容器内暴露的端口映射；</li> </ul> <h3 id="221创建并进入容器">2.2.1创建并进入容器</h3> <p>通过一个镜像名称创建一个容器，并进入容器的<code>/bin/bash</code></p> <pre><code class="language-sh">docker run -it --name 容器名称 镜像名称:标签 /bin/bash</code></pre> <blockquote> <p>注意：Docker 容器运行必须有一个前台进程，如果没有前台进程执行，容器认为是空闲状态，就会自动退出。</p> </blockquote> <p>退出当前容器</p> <pre><code class="language-sh">exit</code></pre> <h3 id="222守护式方式创建容器">2.2.2守护式方式创建容器</h3> <pre><code class="language-sh">docker run -id --name 容器名称 镜像名称:标签  # 登录守护式容器 docker exec -it 容器名称|容器ID /bin/bash</code></pre> <h2 id="23停止与启动容器">2.3停止与启动容器</h2> <pre><code class="language-sh"># 停止容器 docker stop 容器名称|容器ID  # 启动容器 docker start 容器名称|容器ID</code></pre> <h2 id="24文件拷贝">2.4文件拷贝</h2> <p>将文件拷贝到容器内可以使用<code>cp</code> 命令</p> <pre><code class="language-sh">docker cp 需要拷贝的文件或目录 容器名称:容器目录</code></pre> <p>将文件从容器内拷贝出来</p> <pre><code class="language-sh">docker cp 容器名称:容器目录 需要拷贝的文件或目录</code></pre> <h2 id="25目录挂载">2.5目录挂载</h2> <p>		目录挂载是属于容器数据卷操作，我们可以在创建容器的时候，将宿主机的目录与容器内的目录进行映射，这样的话可以通过修改宿主机某个目录的文件而去影响容器，而且这个操作是双向绑定的，也就是说容器内的操作也会影响到宿主机，实现备份功能。</p> <p>		但是容器被删除的时候，宿主机的内容并不会被删除，如果多个容器挂载同一个目录，其中一个容器被删除，其他容器的内容也不会受到影响。</p> <p>创建容器添加<code>-v</code> 参数，格式为<code>宿主机目录:容器目录</code>， 例如：</p> <pre><code class="language-sh">docker run -id -v /mydata/docker_centos/data:/usr/local/data --name centos01 centos:7  # 多个目录挂载 docker run -id -v 宿主机目录1:容器目录1 -v 宿主机目录2:容器目录2 --name 容器名 镜像名</code></pre> <blockquote> <p>在挂载时可能会出现权限不足的提示。这是因为 CentOS7 中的安全模块 SELinux 把权限禁掉了，在 docker run 时通过<code>-privileged=true</code> 给该容器加权限来解决挂载的目录没有权限的问题</p> </blockquote> <h3 id="251匿名挂载">2.5.1匿名挂载</h3> <p>匿名挂载只需要写容器目录即可，容器外对应的目录会在<code>/var/lib/docker/volumes</code> 中生成。</p> <pre><code class="language-sh"># 匿名挂载 docker run -id -v /usr/local/data --name centos02 centos:7  # 查看 volume 数据卷信息 docker volume ls</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/bd45da2e33bc914eb61686533199e5e2.jpg" alt="Docker最常用的镜像命令和容器命令"></p> <h3 id="252具名挂载">2.5.2具名挂载</h3> <p>具名挂载就是给数据卷取个名字，容器外对应的目录就会在<code>/var/lib/docker/volume</code>  中生成。</p> <pre><code class="language-sh"># 具名挂载 docker run -id -v docker_centos_data:/usr/local/data --name centos03 centos:7  # 查看 volume 数据卷信息 docker volume ls</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/87787cf92f7ead9c02f5ed156fa1f0e4.jpg" alt="Docker最常用的镜像命令和容器命令"></p> <h3 id="253指定目录挂载">2.5.3指定目录挂载</h3> <p>最开始的挂载就是指定目录挂载，这种方式的挂载不会在<code>/var/lib/docker/volume</code> 目录生成内容。</p> <pre><code class="language-sh">docker run -id -v /mydata/docker_centos/data:/usr/local/data --name centos01 centos:7  # 多个目录挂载 docker run -id -v 宿主机目录1:容器目录1 -v 宿主机目录2:容器目录2 --name 容器名 镜像名</code></pre> <h3 id="254查看目录挂载关系">2.5.4查看目录挂载关系</h3> <p>通过<code>docker volue inspect 数据卷名称</code> 可以查看该数据卷对应宿主机目录地址。</p> <pre><code class="language-sh">[root@localhost ~]# docker volume inspect centos_data [     {         "CreatedAt": "2022-03-30T20:40:07-07:00",         "Driver": "local",         "Labels": null,         "Mountpoint": "/var/lib/docker/volumes/centos_data/_data",         "Name": "centos_data",         "Options": null,         "Scope": "local"     } ]</code></pre> <p>通过<code>docker inspect 容器ID或名称</code>，在返回的 JSON 节点中找到<code>Mounts</code>， 可以查看详细数据挂载信息。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/99524020ce67dfaa60d88eff0e86d7c1.jpg" alt="Docker最常用的镜像命令和容器命令"></p> <h3 id="255只读只写">2.5.5只读只写</h3> <p>只读：只能通过修改宿主机内容实现对容器的数据管理</p> <pre><code class="language-sh">docker run -it -v 宿主机目录:容器目录:ro --name 容器名 镜像名:标签</code></pre> <p>只写：默认，宿主机和容器可以双向操作数据</p> <pre><code class="language-sh">docker run -it -v 宿主机目录:容器目录:rw --name 容器名 镜像名:标签</code></pre> <h3 id="256继承volumes-from">2.5.6继承（volumes-from）</h3> <p>也就是将其他一个或多个容器继承于某一个容器的挂载目录</p> <pre><code class="language-sh"># 容器 centos7-01 指定目录挂载 docker run -id -v /mydata/data:/usr/local/data --name centos7-01 centos:7  # 容器 centos7-02 和 centos7-03 相当于继承 centos7-01 容器的挂载目录、 docker run -id --volumes-from centos7-01:ro --name centos7-04 centos:7	# 只读 docker run -id --volumes-from centos7-01:rw --name centos7-05 centos:7	# 双向（默认）</code></pre> <h2 id="26查看容器ip地址">2.6查看容器IP地址</h2> <p>通过元信息查看</p> <pre><code class="language-sh">docker inspect 容器名称|容器ID</code></pre> <p>直接输入IP地址</p> <pre><code class="language-sh">docker inspect --format='{{.NetworkSettings.IPAddress}}' 容器名|容器ID</code></pre> <h2 id="27删除容器">2.7删除容器</h2> <pre><code class="language-sh"># 删除指定容器 docker rm 容器名称|容器ID  # 删除多个容器 docker rm 容器名称1|容器ID1 容器名称2|容器ID2</code></pre> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-85708.htm">动物疫苗可以带上高铁吗现在 动物疫苗可以带上高铁吗现在多少钱</a></p>
+                                        <p>下一个：<a href="/news/article-86441.htm">通州宠物批发（通州区宠物店）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-75949.htm" title="饲料加工加盟（饲料加工加盟费多少）">饲料加工加盟（饲料加工加盟费多少）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-free-node-subscribe.htm" title="「3月21日」最高速度21.4M/S，2025年Surge每天更新免费节点订阅链接">「3月21日」最高速度21.4M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-71933.htm" title="动物医院实践心得500字怎么写的呀（动物医院实践心得500字怎么写的呀视频）">动物医院实践心得500字怎么写的呀（动物医院实践心得500字怎么写的呀视频）</a></li>
+                        <li class="py-2"><a href="/news/article-73925.htm" title="动物疫苗打到人身上有事吗视频教程全集（动物打疫苗有什么作用）">动物疫苗打到人身上有事吗视频教程全集（动物打疫苗有什么作用）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-2-free-high-speed-nodes.htm" title="「4月2日」最高速度18M/S，2025年Surge每天更新免费节点订阅链接">「4月2日」最高速度18M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-80724.htm" title="瑞鹏宠物医院工资怎么样（瑞鹏宠物医院工资待遇）">瑞鹏宠物医院工资怎么样（瑞鹏宠物医院工资待遇）</a></li>
+                        <li class="py-2"><a href="/news/article-75266.htm" title="详解如何在Flutter中获取设备标识符_Android_">详解如何在Flutter中获取设备标识符_Android_</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-12-free-subscribe-node.htm" title="「3月12日」最高速度20.1M/S，2025年Surge每天更新免费节点订阅链接">「3月12日」最高速度20.1M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-28-free-node-subscribe.htm" title="「3月28日」最高速度18.1M/S，2025年Surge每天更新免费节点订阅链接">「3月28日」最高速度18.1M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-68633.htm" title="骨架屏技术讲解以及如何在Vue中实现骨架屏">骨架屏技术讲解以及如何在Vue中实现骨架屏</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
