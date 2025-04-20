@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://surgenode.github.io/news/article-100529.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Feign实现远程接口的调用</title>
+        <meta name="description" content="目录 一.Feign介绍 二.Feign使用步骤  一.Feign介绍 在开发中，我们常用httpClient去远程调用其他系统的接口，需要我们指定调用的url，Feign 是一个声明式的 Web S" />
+        <link rel="icon" href="/assets/website/img/surgenode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Surge Node节点订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://surgenode.github.io/news/article-100529.htm" />
+    <meta property="og:site_name" content="Surge Node节点订阅站" />
+    <meta property="og:title" content="Feign实现远程接口的调用" />
+    <meta property="og:image" content="https://surgenode.github.io/uploads/20240723/3b3d070c644ebd4b3b6466d9fe4a2087.webp" />
+        <meta property="og:release_date" content="2025-04-20T09:06:01" />
+    <meta property="og:updated_time" content="2025-04-20T09:06:01" />
+        <meta property="og:description" content="目录 一.Feign介绍 二.Feign使用步骤  一.Feign介绍 在开发中，我们常用httpClient去远程调用其他系统的接口，需要我们指定调用的url，Feign 是一个声明式的 Web S" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Feign实现远程接口的调用">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Bootstrap -->
+    <link href="/assets/website/css/surgenode/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/assets/website/css/surgenode/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3FHW0TV6C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D3FHW0TV6C');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- header-section start -->
+<div class="header navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-2 col-sm-12 col-xs-12">
+                <a href="/" class="navbar-brand">
+                                <span>Surge Node</span>
+                                </a>
+            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/" title="首页">首页</a></li>
+                                                        <li><a href="/free-nodes/" title="免费节点">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/" title="推荐机场">推荐机场</a></li>
+                                                        <li><a href="/client.htm" title="客户端">客户端</a></li>
+                                                        <li><a href="/news/" title="新闻资讯">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header-section close -->
+    <!-- header-section close -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="page-section">
+                    <div class="col-md-6">
+                        <div class="page-description">
+                            <h1 class="page-title">Feign实现远程接口的调用</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li>正文</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--pageheader close -->
+        <!-- hero-section close -->
+    <div class="space-medium">
+        <!-- service-section start -->
+        <div class="container">
+            <div class="row">
+                <!-- service start -->
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong>目录</strong></p> <p id="%E4%B8%80.Feign%E4%BB%8B%E7%BB%8D-toc" style="margin-left:40px;"><a href="#%E4%B8%80.Feign%E4%BB%8B%E7%BB%8D" rel="nofollow">一.Feign介绍</a></p> <p id="%E4%BA%8C.Feign%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4-toc" style="margin-left:40px;"><a href="#%E4%BA%8C.Feign%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4" rel="nofollow">二.Feign使用步骤</a></p> <hr id="hr-toc"/> <h2 id="%E4%B8%80.Feign%E4%BB%8B%E7%BB%8D">一.Feign介绍</h2> <p>在开发中，我们常用httpClient去远程调用其他系统的接口，需要我们指定调用的url，Feign 是一个声明式的 Web Service 客户端，它实现了一套远程调用的方法，调用的方式也更为优雅。</p> <p>前提：1.被调用的模块注册到eureka中，能正常运行</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2.feign接口文件夹要和启动类在同一个目录下， 否则需指定包名，@EnableFeignClients(basePackages="com.**.***")</p> <h2 id="%E4%BA%8C.Feign%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4">二.Feign使用步骤</h2> <p>不同版本依赖可能略有区别</p> <p>2.1 添加feigh客户端依赖</p> <pre><code class="language-java">&lt;dependency&gt;     &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;     &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt; &lt;/dependency&gt;</code></pre> <p>2.2 启动类上添加feign注解：@EnableFeignClients</p> <pre><code class="language-java">@SpringBootApplication @EnableDiscoveryClient @EnableFeignClients public class SIAPIApplication {     public static void main(String[] args) {         SpringApplication.run(SIAPIApplication.class, args);     }   }</code></pre> <p>2.3 application.yml配置文件添加配置信息</p> <pre><code>feign:   client:     config:       default:         connectTimeout: 10000         readTimeout: 10000</code></pre> <p>2.4 创建一个feign客户端，用于引入远程模块的接口：@FeignClient</p> <pre><code class="language-java"># 注册到eureka中的si-api模块名称 @FeignClient(value = "si-api")  public interface ApiOrderFlowService  {   &nbsp; &nbsp; &nbsp;// 这里定义了类似于SpringMVC用法的方法，就可以进行RESTful的调用了     /**      * 更新流程状态      */     @RequestMapping("flow/progressOrderFlow")     Result progressOrderFlow(@RequestParam("orderId") Long orderId);       /**      * 创建流程实例, 并关联指定订单      * @param orderId 指定订单ID      * @param  serviceOfferId 指定订单操作类型      * @return 流程数量      */     @RequestMapping("flow/createOrderFlowInst")     Result createOrderFlowInst(@RequestParam("orderId") Long orderId,                                @RequestParam("serviceOfferId") Integer serviceOfferId); }</code></pre> <p>2.5&nbsp; 在需要进行远程调用的方法里注入该接口，并调用对应的api接口方法</p> <pre><code class="language-java">    @Autowired     private ApiOrderFlowService apiOrderFlowService;</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-100528.htm">Python 垃圾回收机制原理详解</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-75264.htm" title="浅谈分布式一致性协议之3PC">浅谈分布式一致性协议之3PC</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-free-node-subscribe-links.htm" title="「3月24日」最高速度22.5M/S，2025年Surge每天更新免费节点订阅链接">「3月24日」最高速度22.5M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-node-share-links.htm" title="「3月31日」最高速度20.3M/S，2025年Surge每天更新免费节点订阅链接">「3月31日」最高速度20.3M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-92228.htm" title="大型颗粒饲料机图片高清（大型饲料厂用颗粒机）">大型颗粒饲料机图片高清（大型饲料厂用颗粒机）</a></li>
+                        <li class="py-2"><a href="/news/article-85708.htm" title="动物疫苗可以带上高铁吗现在 动物疫苗可以带上高铁吗现在多少钱">动物疫苗可以带上高铁吗现在 动物疫苗可以带上高铁吗现在多少钱</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-19-free-subscribe-node.htm" title="「4月19日」最高速度22.8M/S，2025年Surge每天更新免费节点订阅链接">「4月19日」最高速度22.8M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-68026.htm" title="野猫喂了一次就会记住你（野猫喂了一次就会记住你吗?）">野猫喂了一次就会记住你（野猫喂了一次就会记住你吗?）</a></li>
+                        <li class="py-2"><a href="/news/article-97469.htm" title="如何使用JavaScript在新标签页（而不是新窗口）中打开URL">如何使用JavaScript在新标签页（而不是新窗口）中打开URL</a></li>
+                        <li class="py-2"><a href="/news/article-75950.htm" title="宠物粮食加工设备有哪些品牌（宠物粮加工机器）">宠物粮食加工设备有哪些品牌（宠物粮加工机器）</a></li>
+                        <li class="py-2"><a href="/news/article-74596.htm" title="被猫抓出血了一定要***吗多少钱（被猫抓出血了一定要***吗多少钱一针）">被猫抓出血了一定要***吗多少钱（被猫抓出血了一定要***吗多少钱一针）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">60</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+                <!-- service close -->
+            </div>
+        </div>
+        <!-- service-section close -->
+    </div>
+        <!-- footer start -->
+    <div class="tiny-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    Surge Node节点订阅站 版权所有 Powered by WordPress
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer close -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/assets/website/js/frontend/surgenode/jquery.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/website/js/frontend/surgenode/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/menumaker.js" type="text/javascript"></script>
+    <script src="/assets/website/js/frontend/surgenode/navigation.js" type="text/javascript"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
