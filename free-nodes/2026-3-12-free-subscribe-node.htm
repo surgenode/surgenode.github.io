@@ -304,34 +304,29 @@ sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 的多用户限速功能如何使用？</h5></div>
-    <div class="panel-body">
-        Hiddify Next 支持在管理面板中为每个用户设置带宽上限。管理员可以按需分配速率或流量配额，防止单一用户占用过多资源，从而保持整体网络稳定。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 是否支持延迟排序节点？</h5></div>
-    <div class="panel-body">
-        支持。Matsuri 会自动测试节点延迟并按结果排序。用户可快速选择延迟最低或速度最快的节点，提高网络访问速度，尤其适合游戏或视频场景。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 节点订阅更新不成功怎么办？</h5></div>
-    <div class="panel-body">
-        检查订阅 URL 是否有效并确保网络通畅。可手动刷新或重新添加订阅链接，保证节点列表最新。结合策略组使用，确保稳定科学上网体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 的 gRPC 传输方式有哪些优势？</h5></div>
     <div class="panel-body">
         V2Ray gRPC 传输支持多路复用和长连接，减少握手次数。它对高延迟网络和移动网络非常友好，同时可通过 TLS 加密保护数据，提高隐蔽性和稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 是否可以代理局域网设备？</h5></div>
+    <div class="panel-heading"><h5>Hiddify Next 的多用户限速功能如何使用？</h5></div>
     <div class="panel-body">
-        可以。Netch 支持启用局域网共享功能，使同一网络下的其他设备通过主机的代理访问外网。需确保防火墙允许入站连接，且代理端口在局域网中开放。<hr />    </div>
+        Hiddify Next 支持在管理面板中为每个用户设置带宽上限。管理员可以按需分配速率或流量配额，防止单一用户占用过多资源，从而保持整体网络稳定。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 支持测速功能吗？</h5></div>
     <div class="panel-body">
         支持。WinXray 提供节点延迟测速功能，可检测每个节点的响应时间与可用性。测速结果能帮助用户选择最快线路，也能排除无效或不稳定的节点，提高整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 用户流量配额如何设置？</h5></div>
+    <div class="panel-body">
+        管理员可为每个用户设置带宽和流量上限，超出限制时可降速或阻止访问。确保服务器资源合理分配，避免单用户占用过多带宽，提高整体网络公平性和使用效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 节点订阅更新不成功怎么办？</h5></div>
+    <div class="panel-body">
+        检查订阅 URL 是否有效并确保网络通畅。可手动刷新或重新添加订阅链接，保证节点列表最新。结合策略组使用，确保稳定科学上网体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 的重写规则能做什么？</h5></div>
@@ -344,14 +339,19 @@ sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
         V2Ray 支持 TCP、WebSocket、gRPC、QUIC 等多种传输协议。不同协议在延迟、抗封锁和吞吐量上差异明显。用户可根据网络环境选择最优协议，以获得稳定且高速的连接体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 是否可以代理局域网设备？</h5></div>
+    <div class="panel-body">
+        可以。Netch 支持启用局域网共享功能，使同一网络下的其他设备通过主机的代理访问外网。需确保防火墙允许入站连接，且代理端口在局域网中开放。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 如何手动设置某应用直连？</h5></div>
     <div class="panel-body">
         在 Clash 的规则文件中添加 PROCESS-NAME 规则，如 `PROCESS-NAME,chrome.exe,DIRECT`。保存并重启后，该应用的流量将绕过代理直连。适用于游戏或内网程序等特殊场景。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 用户流量配额如何设置？</h5></div>
+    <div class="panel-heading"><h5>Matsuri 是否支持延迟排序节点？</h5></div>
     <div class="panel-body">
-        管理员可为每个用户设置带宽和流量上限，超出限制时可降速或阻止访问。确保服务器资源合理分配，避免单用户占用过多带宽，提高整体网络公平性和使用效率。    </div>
+        支持。Matsuri 会自动测试节点延迟并按结果排序。用户可快速选择延迟最低或速度最快的节点，提高网络访问速度，尤其适合游戏或视频场景。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -380,16 +380,16 @@ sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-1-25-free-node-subscribe.htm" title="「1月25日」最高速度21.6M/S，2025年Surge每天更新免费节点订阅链接">「1月25日」最高速度21.6M/S，2025年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-1-free-node-subscribe.htm" title="「2月1日」最高速度18.2M/S，2025年Surge每天更新免费节点订阅链接">「2月1日」最高速度18.2M/S，2025年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-29-free-subscribe-node.htm" title="「1月29日」最高速度18.8M/S，2025年Surge每天更新免费节点订阅链接">「1月29日」最高速度18.8M/S，2025年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-3-free-node-subscribe-links.htm" title="「3月3日」最高速度22.3M/S，2025年Surge每天更新免费节点订阅链接">「3月3日」最高速度22.3M/S，2025年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-26-node-share-links.htm" title="「1月26日」最高速度19.2M/S，2025年Surge每天更新免费节点订阅链接">「1月26日」最高速度19.2M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-18-free-node-subscribe-links.htm" title="「3月18日」最高速度19.6M/S，2025年Surge每天更新免费节点订阅链接">「3月18日」最高速度19.6M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-23-free-node-subscribe.htm" title="「3月23日」最高速度21.3M/S，2025年Surge每天更新免费节点订阅链接">「3月23日」最高速度21.3M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-15-free-high-speed-nodes.htm" title="「3月15日」最高速度21.6M/S，2025年Surge每天更新免费节点订阅链接">「3月15日」最高速度21.6M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-16-node-share-links.htm" title="「3月16日」最高速度21.7M/S，2025年Surge每天更新免费节点订阅链接">「3月16日」最高速度21.7M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-14-free-high-speed-nodes.htm" title="「3月14日」最高速度18M/S，2025年Surge每天更新免费节点订阅链接">「3月14日」最高速度18M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-7-free-subscribe-node.htm" title="「3月7日」最高速度22.3M/S，2025年Surge每天更新免费节点订阅链接">「3月7日」最高速度22.3M/S，2025年Surge每天更新免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-3-17-node-share.htm" title="「3月17日」最高速度20.6M/S，2025年Surge每天更新免费节点订阅链接">「3月17日」最高速度20.6M/S，2025年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-28-free-subscribe-node.htm" title="「2月28日」最高速度19.8M/S，2025年Surge每天更新免费节点订阅链接">「2月28日」最高速度19.8M/S，2025年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-13-free-node-subscribe-links.htm" title="「3月13日」最高速度20.6M/S，2025年Surge每天更新免费节点订阅链接">「3月13日」最高速度20.6M/S，2025年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-20-free-subscribe-node.htm" title="「2月20日」最高速度18.9M/S，2025年Surge每天更新免费节点订阅链接">「2月20日」最高速度18.9M/S，2025年Surge每天更新免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-10-free-subscribe-node.htm" title="「3月10日」最高速度19.3M/S，2025年Surge每天更新免费节点订阅链接">「3月10日」最高速度19.3M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-28-free-node-subscribe.htm" title="「3月28日」最高速度21.5M/S，2025年Surge每天更新免费节点订阅链接">「3月28日」最高速度21.5M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-19-free-high-speed-nodes.htm" title="「3月19日」最高速度22.5M/S，2025年Surge每天更新免费节点订阅链接">「3月19日」最高速度22.5M/S，2025年Surge每天更新免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-25-free-high-speed-nodes.htm" title="「3月25日」最高速度18.3M/S，2025年Surge每天更新免费节点订阅链接">「3月25日」最高速度18.3M/S，2025年Surge每天更新免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -401,13 +401,10 @@ sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
+                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
             </li>
                     </ul>
     </div>
