@@ -1,4 +1,4 @@
-# 「11月5日」最高速度19.8M/S，2025年Surge每天更新免费节点订阅链接  更新时间 2026-11-05 11:08:41
+# 「11月12日」最高速度19M/S，2026年Surge每天更新免费节点订阅链接  更新时间 2026-11-12 08:24:24
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://surgenode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://surgenode.github.io/uploads/2026/11/0-20261105.yaml
-- https://surgenode.github.io/uploads/2026/11/1-20261105.yaml
-- https://surgenode.github.io/uploads/2026/11/2-20261105.yaml
-- https://surgenode.github.io/uploads/2026/11/3-20261105.yaml
-- https://surgenode.github.io/uploads/2026/11/4-20261105.yaml
+- https://surgenode.github.io/uploads/2026/11/0-20261112.yaml
+- https://surgenode.github.io/uploads/2026/11/1-20261112.yaml
+- https://surgenode.github.io/uploads/2026/11/2-20261112.yaml
+- https://surgenode.github.io/uploads/2026/11/3-20261112.yaml
+- https://surgenode.github.io/uploads/2026/11/4-20261112.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://surgenode.github.io/uploads/2026/11/0-20261105.txt
-- https://surgenode.github.io/uploads/2026/11/1-20261105.txt
-- https://surgenode.github.io/uploads/2026/11/2-20261105.txt
-- https://surgenode.github.io/uploads/2026/11/3-20261105.txt
-- https://surgenode.github.io/uploads/2026/11/4-20261105.txt
+- https://surgenode.github.io/uploads/2026/11/0-20261112.txt
+- https://surgenode.github.io/uploads/2026/11/1-20261112.txt
+- https://surgenode.github.io/uploads/2026/11/2-20261112.txt
+- https://surgenode.github.io/uploads/2026/11/3-20261112.txt
+- https://surgenode.github.io/uploads/2026/11/4-20261112.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://surgenode.github.io/uploads/2026/11/20261105.json
+- https://surgenode.github.io/uploads/2026/11/20261112.json
 
 ## 更多Clash节点订阅 ：
 
